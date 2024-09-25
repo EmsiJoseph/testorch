@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "POSTGRES_DATABASE": "verceldb",
+    "POSTGRES_HOST": "ep-young-lab-a1zlndp5-pooler.ap-southeast-1.aws.neon.tech",
+    "POSTGRES_PASSWORD": "ndD5UApa3xYF",
+    "POSTGRES_PRISMA_URL": "postgres://default:ndD5UApa3xYF@ep-young-lab-a1zlndp5-pooler.ap-southeast-1.aws.neon.tech/verceldb?pgbouncer=true&connect_timeout=15&sslmode=require",
+    "POSTGRES_URL": "postgres://default:ndD5UApa3xYF@ep-young-lab-a1zlndp5-pooler.ap-southeast-1.aws.neon.tech/verceldb?sslmode=require",
+    "POSTGRES_URL_NON_POOLING": "postgres://default:ndD5UApa3xYF@ep-young-lab-a1zlndp5.ap-southeast-1.aws.neon.tech/verceldb?sslmode=require",
+    "POSTGRES_URL_NO_SSL": "postgres://default:ndD5UApa3xYF@ep-young-lab-a1zlndp5-pooler.ap-southeast-1.aws.neon.tech/verceldb",
+    "POSTGRES_USER": "default",
+
+    "NEXT_PUBLIC_NEW_RELIC_APP_NAME": "TestorchFENode",
+    "NEXT_PUBLIC_NEW_RELIC_LICENSE_KEY": "5e820a26ee0067a4033ba36082ab0e41FFFFNRAL"
+
+  }
+}

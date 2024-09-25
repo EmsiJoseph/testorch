@@ -1,0 +1,16 @@
+services:
+  testorch-app-db:
+    image: postgres
+    container_name: testorch-app-db
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_USER: testorch_postgres
+      POSTGRES_DB: testorch_db
+      POSTGRES_PASSWORD: 2b10d92IXUNpkjO0rOQ5byMiYe4oKoEa3Ro9llCgat2uDFbMkwqc
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres:

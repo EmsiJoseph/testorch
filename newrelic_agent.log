@@ -1,0 +1,142 @@
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:19.712Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:19.920Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:20.007Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:20.024Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:20.025Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:20.670Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:20.763Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:20.818Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:20.824Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:20.824Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:22.746Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:22.747Z","msg":"Connected to collector.newrelic.com:443 with agent run ID BU1qvH7IZBwJAEdYWTu24wRm3pqYAAgBAAAnIQEAAENQAgQ7tuh2AwAGMTIuMy4xAAdFTVNJLVBDAA5UZXN0b3JjaEZFTm9kZQ.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:22.748Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/4675673/applications/1001842806","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:22.749Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"log_event_data\":833,\"analytic_event_data\":833,\"custom_event_data\":250}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:22.757Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":40,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:23.343Z","msg":"Next.js middleware instrumentation only supported on >=12.2.0 <=13.4.12, got 14.2.7","component":"WebFrameworkShim","module":"next/dist/server/next-server","framework":"Nextjs"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17232,"time":"2024-09-09T06:48:23.768Z","msg":"Starting initial 1000ms harvest."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:24.769Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:24.769Z","msg":"Connected to collector.newrelic.com:443 with agent run ID BTWC9uSYxvh9AEdYWTu24wRm3pqYAAgBAAAnIQEAAA5IAgQ7tuh2AwAGMTIuMy4xAAdFTVNJLVBDAA5UZXN0b3JjaEZFTm9kZQ.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:24.769Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/4675673/applications/1001842806","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:24.770Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"log_event_data\":833,\"analytic_event_data\":833,\"custom_event_data\":250}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:24.773Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:48:25.788Z","msg":"Starting initial 1000ms harvest."}
+{"v":0,"level":40,"name":"newrelic","hostname":"EMSI-PC","pid":3656,"time":"2024-09-09T06:49:26.340Z","msg":"Transaction WebTransaction/WebFrameworkUri/Nextjs/GET// (da24578ef0bb44f8) contained 945 segments, only collecting the first 900","component":"Transaction Trace Aggregator"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":8744,"time":"2024-09-09T06:49:32.168Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":8744,"time":"2024-09-09T06:49:32.382Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":8744,"time":"2024-09-09T06:49:32.476Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":8744,"time":"2024-09-09T06:49:32.485Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":8744,"time":"2024-09-09T06:49:32.485Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17792,"time":"2024-09-09T07:33:35.494Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17792,"time":"2024-09-09T07:33:35.693Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17792,"time":"2024-09-09T07:33:35.779Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17792,"time":"2024-09-09T07:33:35.800Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17792,"time":"2024-09-09T07:33:35.800Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":7944,"time":"2024-09-09T07:33:37.351Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":7944,"time":"2024-09-09T07:33:37.450Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":7944,"time":"2024-09-09T07:33:37.519Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":7944,"time":"2024-09-09T07:33:37.533Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":7944,"time":"2024-09-09T07:33:37.533Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:36:57.632Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:36:57.829Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:36:57.899Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:36:57.919Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:36:57.919Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:36:58.524Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:36:58.622Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:36:58.669Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:36:58.673Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:36:58.674Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":40,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:37:00.783Z","msg":"Next.js middleware instrumentation only supported on >=12.2.0 <=13.4.12, got 14.2.8","component":"WebFrameworkShim","module":"next/dist/server/next-server","framework":"Nextjs"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:37:03.209Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:37:03.222Z","msg":"Connected to collector.newrelic.com:443 with agent run ID Bc6xpALZuFfcAEdYWTu24wRm3qYUAAgBAAAnIQEAADr0AgQ7tuh2AwAGMTIuMy4xAAdFTVNJLVBDAA5UZXN0b3JjaEZFTm9kZQ.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:37:03.222Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/4675673/applications/1001842806","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:37:03.225Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"log_event_data\":833,\"analytic_event_data\":833,\"custom_event_data\":250}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:37:03.232Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:37:03.310Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:37:03.311Z","msg":"Connected to collector.newrelic.com:443 with agent run ID BcflxpLBmz6YAEdYWTu24wRm3qYUAAgBAAAnIQEAAC9oAgQ7tuh2AwAGMTIuMy4xAAdFTVNJLVBDAA5UZXN0b3JjaEZFTm9kZQ.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:37:03.311Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/4675673/applications/1001842806","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:37:03.313Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"log_event_data\":833,\"analytic_event_data\":833,\"custom_event_data\":250}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:37:03.318Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":15092,"time":"2024-09-09T07:37:04.246Z","msg":"Starting initial 1000ms harvest."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":12136,"time":"2024-09-09T07:37:04.322Z","msg":"Starting initial 1000ms harvest."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17792,"time":"2024-09-09T07:37:08.704Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17792,"time":"2024-09-09T07:37:08.863Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17792,"time":"2024-09-09T07:37:08.941Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17792,"time":"2024-09-09T07:37:08.950Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"EMSI-PC","pid":17792,"time":"2024-09-09T07:37:08.950Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:37.425Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:37.759Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:37.893Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:37.914Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:37.914Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:38.742Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:38.882Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:38.950Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:38.957Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:38.957Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:41.309Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:41.309Z","msg":"Connected to collector.newrelic.com:443 with agent run ID BRgPgP3PRTq9AEdYWTyA8Adm84GcAAgBAAAnIQEAAC-IAgQ7tuh2AwAGMTIuMy4xAAhOT1QtRU1TSQAOVGVzdG9yY2hGRU5vZGU.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:41.309Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/4675673/applications/1001842806","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:41.311Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"log_event_data\":833,\"analytic_event_data\":833,\"custom_event_data\":250}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:41.321Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":40,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:41.840Z","msg":"Next.js middleware instrumentation only supported on >=12.2.0 <=13.4.12, got 14.2.8","component":"WebFrameworkShim","module":"next/dist/server/next-server","framework":"Nextjs"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12168,"time":"2024-09-25T03:19:42.325Z","msg":"Starting initial 1000ms harvest."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:43.152Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:43.152Z","msg":"Connected to collector.newrelic.com:443 with agent run ID BXjOb-39-zhhAEdYWTyA8Adm84GcAAgBAAAnIQEAACyEAgQ7tuh2AwAGMTIuMy4xAAhOT1QtRU1TSQAOVGVzdG9yY2hGRU5vZGU.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:43.152Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/4675673/applications/1001842806","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:43.153Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"log_event_data\":833,\"analytic_event_data\":833,\"custom_event_data\":250}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:43.157Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":11396,"time":"2024-09-25T03:19:44.186Z","msg":"Starting initial 1000ms harvest."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":17788,"time":"2024-09-25T03:20:37.106Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":17788,"time":"2024-09-25T03:20:37.382Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":17788,"time":"2024-09-25T03:20:37.489Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":17788,"time":"2024-09-25T03:20:37.498Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":17788,"time":"2024-09-25T03:20:37.498Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:39.750Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:39.888Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:39.942Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:39.949Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:39.949Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:40.574Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:40.688Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:40.740Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:40.747Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:40.747Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:43.075Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:43.075Z","msg":"Connected to collector.newrelic.com:443 with agent run ID BX3CaEKyMT4BAEdYWTyA8Adm84HYAAgBAAAnIQEAAGcAAgQ7tuh2AwAGMTIuMy4xAAhOT1QtRU1TSQAOVGVzdG9yY2hGRU5vZGU.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:43.075Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/4675673/applications/1001842806","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:43.077Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"log_event_data\":833,\"analytic_event_data\":833,\"custom_event_data\":250}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:43.085Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":26368,"time":"2024-09-25T03:20:44.096Z","msg":"Starting initial 1000ms harvest."}
+{"v":0,"level":40,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:44.647Z","msg":"Next.js middleware instrumentation only supported on >=12.2.0 <=13.4.12, got 14.2.8","component":"WebFrameworkShim","module":"next/dist/server/next-server","framework":"Nextjs"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:45.689Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:45.689Z","msg":"Connected to collector.newrelic.com:443 with agent run ID Baw7wLTFZyHMAEdYWTyA8Adm84HYAAgBAAAnIQEAADD8AgQ7tuh2AwAGMTIuMy4xAAhOT1QtRU1TSQAOVGVzdG9yY2hGRU5vZGU.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:45.689Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/4675673/applications/1001842806","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:45.690Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"log_event_data\":833,\"analytic_event_data\":833,\"custom_event_data\":250}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:45.698Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":12540,"time":"2024-09-25T03:20:46.703Z","msg":"Starting initial 1000ms harvest."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:10:55.659Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:10:55.880Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:10:55.969Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:10:55.984Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:10:55.984Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":40,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:11:00.308Z","msg":"Next.js middleware instrumentation only supported on >=12.2.0 <=13.4.12, got 14.2.8","component":"WebFrameworkShim","module":"next/dist/server/next-server","framework":"Nextjs"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:11:01.609Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:11:01.610Z","msg":"Connected to collector.newrelic.com:443 with agent run ID BbbnSlOqgETUAEdYWTyA8Adm843MAAgBAAAnIQEAABDkAgQ7tuh2AwAGMTIuMy4xAAhOT1QtRU1TSQAOVGVzdG9yY2hGRU5vZGU.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:11:01.610Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/4675673/applications/1001842806","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:11:01.611Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"log_event_data\":833,\"analytic_event_data\":833,\"custom_event_data\":250}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:11:01.614Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":4324,"time":"2024-09-25T04:11:02.619Z","msg":"Starting initial 1000ms harvest."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:29.454Z","msg":"Using New Relic for Node.js. Agent version: 12.3.1; Node version: v20.12.2."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:30.194Z","msg":"Using AsyncLocalContextManager"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:30.402Z","msg":"Agent state changed from stopped to starting."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:30.430Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:30.431Z","msg":"Agent state changed from starting to connecting."}
+{"v":0,"level":40,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:33.333Z","msg":"Next.js middleware instrumentation only supported on >=12.2.0 <=13.4.12, got 14.2.8","component":"WebFrameworkShim","module":"next/dist/server/next-server","framework":"Nextjs"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:35.911Z","msg":"Agent state changed from connecting to connected."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:35.911Z","msg":"Connected to collector.newrelic.com:443 with agent run ID BUPpj-GxHQhWAEdYWTyA8Adm849wAAgBAAAnIQEAAAnQAgQ7tuh2AwAGMTIuMy4xAAhOT1QtRU1TSQAOVGVzdG9yY2hGRU5vZGU.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:35.911Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/4675673/applications/1001842806","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:35.912Z","msg":"Valid event_harvest_config received. Updating harvest cycles. {\"report_period_ms\":5000,\"harvest_limits\":{\"error_event_data\":8,\"log_event_data\":833,\"analytic_event_data\":833,\"custom_event_data\":250}}"}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:35.917Z","msg":"Agent state changed from connected to started."}
+{"v":0,"level":30,"name":"newrelic","hostname":"NOT-EMSI","pid":2512,"time":"2024-09-25T04:18:36.931Z","msg":"Starting initial 1000ms harvest."}

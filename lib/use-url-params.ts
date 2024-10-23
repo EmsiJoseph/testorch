@@ -1,6 +1,6 @@
 import { useSearchParams } from "next/navigation";
 
-export const getUrlParams = () => {
+export const useUrlParams = () => {
     const searchParams = useSearchParams();
 
     const sortBy = searchParams.get("sort") || "name";

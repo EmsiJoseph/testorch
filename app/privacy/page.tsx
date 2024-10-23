@@ -18,7 +18,7 @@ export default function Privacy() {
                         and protect Personal Data, and learn about your rights and choices regarding our processing of
                         your data.
                       </p>
-                      <h2>II. Testorch's Roles & Responsibilities</h2>
+                      <h2>II. Testorch&apos;s Roles & Responsibilities</h2>
                       <p>
                         Testorch is responsible for processing your Personal Data in accordance with this Privacy
                         Policy. This policy applies to Testorch’s role as a data controller, except where we operate as
@@ -29,7 +29,7 @@ export default function Privacy() {
                         In some cases, Testorch customers may use our platform and submit data to our systems. In such
                         cases, Testorch acts as a data processor, handling information on behalf of customers. Customers
                         are responsible for determining what Personal Data is submitted to our service. Testorch
-                        processes this information based on the customer's instructions and under a service agreement.
+                        processes this information based on the customer&apos;s instructions and under a service agreement.
                       </p>
                       <h2>III. Personal Data We Collect</h2>
                       <h3>Covered Data Processing Activities</h3>

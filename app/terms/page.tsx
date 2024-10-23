@@ -69,7 +69,7 @@ export default function TermsOfUse() {
             <h3>Content</h3>
             <p>
               We may change the content of the Site from time to time. Your use
-              of the Site is on an "as is" and "as available" basis. We strive
+              of the Site is on an &quot;as is&quot; and &quot;as available&quot; basis. We strive
               to ensure the accuracy of the information on the Site, but it
               should not be relied upon without verification.
             </p>

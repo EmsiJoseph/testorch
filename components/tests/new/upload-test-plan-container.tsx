@@ -92,7 +92,7 @@ const UploadTestPlanContainer = () => {
         <div className="container mx-auto p-6">
             {/* Header Section */}
             <div className="text-center">
-                <h1 className="text-4xl font-bold mb-2">Let's test something new.</h1>
+                <h1 className="text-4xl font-bold mb-2">Let&apos;s test something new.</h1>
                 <p className="text-gray-500">
                     To execute a new Test, upload a working Test Plan in <Code>JMX</Code> or <Code>XML</Code> format.
                 </p>

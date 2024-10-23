@@ -3,11 +3,11 @@ import Link from "next/link"
 import { appClient } from "@/lib/auth0"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
-import { Auth0Logo } from "@/components/auth0-logo"
+import { TestorchLogo } from "@/components/common/testorch-logo"
 
 import { SignUpForm } from "./signup-form"
 import { WelcomeBackCard } from "./welcome-back-card"
-import { SubmitButton } from "@/components/submit-button"
+import { SubmitButton } from "@/components/common/submit-button"
 
 export default async function Home() {
   const session = await appClient.getSession()
@@ -31,7 +31,7 @@ export default async function Home() {
           className="text-sm underline"
           href="/api/auth/login"
         >
-          <SubmitButton>Log in</SubmitButton>
+          <SubmitButton className="ml-4">Log in</SubmitButton>
         </a>
         </div>
       )}
@@ -39,20 +39,18 @@ export default async function Home() {
       <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
         <div className="absolute inset-0 bg-black" />
         <div className="relative z-20 flex items-center text-lg font-medium">
-          <Auth0Logo className="mr-2 size-8" />
-          <span className="font-semibold">SaaStart</span>
+          <TestorchLogo/>
+          <span className="ml-2 font-semibold">Testorch</span>
         </div>
         <div className="relative z-20 m-auto max-w-sm text-center">
           <blockquote className="space-y-2">
             <div className="space-y-8">
               <p className="text-lg font-medium">
-                SaaStart is a reference B2B SaaS application built using Next.js
-                and Auth0 by Okta.
+                Testorch is a load test framework for testing the scalability and
+                performance your applications.
               </p>
               <p className="text-lg">
-                It features multi-tenancy support, user management and access
-                controls, security policies, self-service Single Sign-On
-                configuration and more out-of-the-box.
+                It features test plan execution, project management, and many more
               </p>
             </div>
           </blockquote>

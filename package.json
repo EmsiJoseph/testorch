@@ -1,8 +1,8 @@
 {
-  "name": "auth0-b2b-saas-starter",
+  "name": "testorch",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3005",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,10 +21,12 @@
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-progress": "^1.0.3",
     "@radix-ui/react-radio-group": "^1.1.3",
-    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-scroll-area": "^1.2.0",
+    "@radix-ui/react-select": "^2.1.2",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-tabs": "^1.1.1",
     "@sindresorhus/slugify": "^2.2.1",
     "auth0": "^4.7.0",
     "class-variance-authority": "^0.7.0",
@@ -35,12 +37,15 @@
     "lucide-react": "^0.379.0",
     "next": "^14.2.3",
     "next-themes": "^0.3.0",
+    "nextjs-toploader": "^3.7.15",
     "ora": "^8.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-dropzone": "^14.2.10",
     "sonner": "^1.4.41",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^5.0.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.2.1",

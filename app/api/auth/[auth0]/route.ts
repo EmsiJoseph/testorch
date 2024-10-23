@@ -20,7 +20,7 @@ export const GET = appClient.handleAuth({
         organization,
         invitation,
       },
-      returnTo: "/dashboard",
+      returnTo: "/projects",
     }
   }),
   signup: appClient.handleLogin({

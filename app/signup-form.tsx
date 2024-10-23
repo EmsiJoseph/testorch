@@ -3,17 +3,17 @@ import { redirect } from "next/navigation"
 
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { SubmitButton } from "@/components/submit-button"
+import { SubmitButton } from "@/components/common/submit-button"
 
 export function SignUpForm() {
   return (
     <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
       <div className="flex flex-col space-y-2 text-center">
         <h1 className="text-2xl font-semibold tracking-tight">
-          Try SaaStart for Free
+          Try Testorch for Free
         </h1>
         <p className="text-sm text-muted-foreground">
-          Enter your email address to sign up and create a new organization for you and your collaborators.
+          Enter your email address to sign up and create a new team for you and your collaborators.
         </p>
       </div>
       <form

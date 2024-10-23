@@ -24,6 +24,7 @@ export default async function CreateLayout({
     }
   ).then((res) => res.json())
 
+  console.log("verified: ", user.email_verified)
   // user must verify their e-mail first to create your account
   if (!user.email_verified) {
     redirect("/onboarding/verify")

@@ -27,7 +27,7 @@ It incorporates best practices and industry-standard technologies to provide a r
 Use this to bootstrap a SaaS application with the following commonly needed capabilities:
 
 - Multi-tenancy with a single pool of users in a shared user database (see: [Multiple Organization Architecture](https://auth0.com/docs/get-started/architecture-scenarios/multiple-organization-architecture#users-shared-between-organizations))
-- Sign up with tenant ([Organization](https://auth0.com/docs/manage-users/organizations)) creation
+- Sign up with tenant ([Organization](https://auth0.com/docs/manage-users/teams)) creation
 - Logged in / Logged out product landing page experience
 - User management with invitation workflows, create/delete user capabilities, and RBAC roles
 - Self-service user profile management, password reset, and MFA configuration
@@ -201,7 +201,7 @@ Reference the [README-ADVANCED.md](README-ADVANCED.md) instructions to learn abo
 
 To learn more about Auth0, take a look at the following resources:
 
-- [Understand how Auth0 Organizations Work](https://auth0.com/docs/manage-users/organizations/organizations-overview) - learn about how this project achieves multi-tenancy
+- [Understand how Auth0 Organizations Work](https://auth0.com/docs/manage-users/teams/teams-overview) - learn about how this project achieves multi-tenancy
 - [Customize](https://auth0.com/docs/customize) - learn how to brand and internationalize all Auth0 interactions with your end-users
 
 ## Contributing

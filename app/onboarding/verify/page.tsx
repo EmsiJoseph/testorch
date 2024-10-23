@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { SubmitButton } from "@/components/submit-button"
+import { SubmitButton } from "@/components/common/submit-button"
 
 import { resendVerificationEmail } from "./actions"
 

@@ -7,8 +7,8 @@ import { toast } from "sonner"
 
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Code } from "@/components/code"
-import { SubmitButton } from "@/components/submit-button"
+import { Code } from "@/components/common/code"
+import { SubmitButton } from "@/components/common/submit-button"
 
 import { createOrganization } from "./actions"
 
@@ -24,7 +24,7 @@ export function CreateOrganizationForm() {
         if (error) {
           toast.error(error)
         } else {
-          toast.success("Your organization has been created.")
+          toast.success("Your team has been created.")
         }
       }}
     >
@@ -41,7 +41,7 @@ export function CreateOrganizationForm() {
           />
         </div>
         <div className="grid gap-2">
-          <Label htmlFor="organization_name">Organization Name</Label>
+          <Label htmlFor="organization_name">Team Name</Label>
           <Input
             id="organization_name"
             name="organization_name"
@@ -58,7 +58,7 @@ export function CreateOrganizationForm() {
             Slug: <Code>{slugify(name || "Acme Corp")}</Code>
           </p>
         </div>
-        <SubmitButton>Create Organization</SubmitButton>
+        <SubmitButton>Create Team</SubmitButton>
       </div>
     </form>
   )

@@ -5,116 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be384875-d8a7-4e2c-a90d-2df1791215f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.config/auth0/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Caddyfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(protected)/dashboards/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(protected)/projects/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(protected)/tests/new/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(protected)/tests/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/search-bar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/sort-select-btn.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/status-badge.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/testorch-logo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/under-construction.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/common/view-toggle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/nav/user-nav.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/projects/add-new-dropdown-btn.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/projects/project-card-grid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/projects/project-card-list.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/projects/project-container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/projects/project-grid-view.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/projects/project-list-view.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/projects/recent-activity-list.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/projects/recent-activity.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tests/dropzone.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tests/recent-tests.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tests/test-group.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tests/test-plan-card-grid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tests/test-plan-card-list.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tests/test-plan-grid-view.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tests/test-plan-list-view.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tests/test-plans-container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tests/test-plans-view.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/tests/upload-btn.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/imageupload.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/scroll-area.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ui/spinner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/auth/[auth0]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/auth/[auth0]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/account/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/account/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/account/profile/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/account/profile/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/account/profile/delete-account-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/account/profile/delete-account-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/account/profile/display-name-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/account/profile/display-name-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/account/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/account/profile/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/account/security/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/account/security/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/account/security/mfa-enrollment-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/account/security/mfa-enrollment-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/account/security/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/account/security/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/general/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/general/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/general/display-name-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/general/display-name-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/general/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/general/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/members/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/members/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/members/create-invitation-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/members/create-invitation-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/members/invitations-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/members/invitations-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/members/members-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/members/members-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/members/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/members/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/security-policies/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/security-policies/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/security-policies/mfa-policy-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/security-policies/mfa-policy-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/security-policies/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/security-policies/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/components/add-domain-dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/components/add-domain-dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/components/provisioning/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/components/provisioning/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/components/provisioning/scim-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/components/provisioning/scim-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/components/sso-nav-link.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/components/sso-nav-link.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/connections-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/connections-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/oidc/edit/[connectionId]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/oidc/edit/[connectionId]/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/oidc/edit/[connectionId]/provisioning/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/saml/edit/[connectionId]/provisioning/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/oidc/edit/[connectionId]/settings/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/oidc/edit/[connectionId]/settings/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/oidc/edit/[connectionId]/settings/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/oidc/edit/[connectionId]/settings/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/oidc/edit/[connectionId]/settings/update-oidc-connection-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/oidc/edit/[connectionId]/settings/update-oidc-connection-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/oidc/new/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/oidc/new/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/oidc/new/create-oidc-connection-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/oidc/new/create-oidc-connection-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/oidc/new/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/oidc/new/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/saml/edit/[connectionId]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/saml/edit/[connectionId]/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/saml/edit/[connectionId]/provisioning/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/oidc/edit/[connectionId]/provisioning/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/saml/edit/[connectionId]/settings/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/saml/edit/[connectionId]/settings/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/saml/edit/[connectionId]/settings/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/saml/edit/[connectionId]/settings/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/saml/edit/[connectionId]/settings/update-saml-connection-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/saml/edit/[connectionId]/settings/update-saml-connection-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/saml/new/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/saml/new/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/saml/new/create-saml-connection-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/saml/new/create-saml-connection-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/organization/sso/saml/new/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(protected)/(settings)/team/sso/saml/new/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/onboarding/[auth0]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/onboarding/[auth0]/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/onboarding/create/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/onboarding/create/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/onboarding/create/create-organization-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/onboarding/create/create-organization-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/onboarding/create/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/onboarding/create/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/onboarding/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/onboarding/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/onboarding/verify/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/onboarding/verify/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/onboarding/verify/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/onboarding/verify/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/privacy/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/privacy/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/signup-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signup-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/terms/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/terms/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/welcome-back-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/welcome-back-card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/app-breadcrumb.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/app-breadcrumb.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/auth0-logo.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/code.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/code.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/mode-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/mode-toggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/organization-switcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/nav/team-switcher.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/page-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/page-header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sidebar-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/nav/sidebar-nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/spinner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/spinner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/submit-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/submit-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/theme-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/theme-provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user-nav.tsx" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/team/new/create-team-modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/backend-axios-config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/nav/team-switcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/nav/team-switcher.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/bootstrap.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/bootstrap.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +40,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "project-management-feat",
     "js.buildTools.grunt.grunt-cli.package": "",
     "last_opened_file_path": "C:/Users/McJoseph/WebstormProjects/testorch/components/tests",
     "node.js.detected.package.eslint": "true",
@@ -196,6 +91,7 @@
       <workItem from="1729534531668" duration="467000" />
       <workItem from="1729535063996" duration="41000" />
       <workItem from="1729653971420" duration="21509000" />
+      <workItem from="1729766811344" duration="549000" />
     </task>
     <servers />
   </component>

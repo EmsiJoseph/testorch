@@ -1,0 +1,10 @@
+.next
+.idea
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+node_modules
+dist
+build

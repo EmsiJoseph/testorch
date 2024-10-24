@@ -11,7 +11,7 @@ export default async function CreateLayout({
   const session = await onboardingClient.getSession()
 
   if (!session) {
-    redirect("/onboarding/signup")
+    redirect("/auth/signup")
   }
 
   // fetch the latest user data to ensure that the `email_verified` is not stale
@@ -27,11 +27,11 @@ export default async function CreateLayout({
   console.log("verified: ", user.email_verified)
   // user must verify their e-mail first to create your account
   if (!user.email_verified) {
-    redirect("/onboarding/verify")
+    redirect("/auth/verify")
   }
 
   return (
-    <UserProvider profileUrl="/onboarding/me">
+    <UserProvider profileUrl="/auth/me">
       <main className="min-h-screen">{children}</main>
     </UserProvider>
   )

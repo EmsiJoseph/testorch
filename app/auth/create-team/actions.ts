@@ -9,7 +9,7 @@ export async function createOrganization(formData: FormData) {
     const session = await onboardingClient.getSession()
 
     if (!session) {
-        return redirect("/onboarding/signup")
+        return redirect("/auth/signup")
     }
 
     const organizationName = formData.get("organization_name")

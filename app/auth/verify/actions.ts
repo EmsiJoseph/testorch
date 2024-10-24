@@ -8,7 +8,7 @@ export async function resendVerificationEmail() {
   const session = await onboardingClient.getSession()
 
   if (!session) {
-    return redirect("/onboarding/signup")
+    return redirect("/auth/signup")
   }
 
   try {

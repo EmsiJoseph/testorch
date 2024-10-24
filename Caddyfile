@@ -1,0 +1,8 @@
+{
+	auto_https disable_redirects
+}
+
+testorch.com:8443 {
+	reverse_proxy 127.0.0.1:3005
+	tls internal
+}

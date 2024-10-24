@@ -9,7 +9,7 @@ export default async function VerifyLayout({
   const session = await onboardingClient.getSession()
 
   if (!session) {
-    redirect("/auth/signup")
+    redirect("/onboarding/signup")
   }
 
   // fetch the latest user data to ensure that the `email_verified` is not stale
@@ -23,7 +23,7 @@ export default async function VerifyLayout({
   ).then((res) => res.json())
   // user must verify their e-mail first to create your account
   if (user.email_verified) {
-    redirect("/auth/create-team")
+    redirect("/onboarding/create")
   }
 
   return <main className="flex min-h-screen items-center">{children}</main>

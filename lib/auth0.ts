@@ -14,7 +14,7 @@ export const onboardingClient = initAuth0({
   issuerBaseURL: `https://${process.env.NEXT_PUBLIC_AUTH0_DOMAIN}`,
   secret: process.env.SESSION_ENCRYPTION_SECRET,
   routes: {
-    callback: "/auth/callback",
+    callback: "/onboarding/callback",
     postLogoutRedirect: "/",
   },
 })

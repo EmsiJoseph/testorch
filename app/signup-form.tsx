@@ -27,7 +27,7 @@ export function SignUpForm() {
             login_hint: email,
           })
 
-          redirect(`/auth/signup?${searchParams.toString()}`)
+          redirect(`/onboarding/signup?${searchParams.toString()}`)
         }}
       >
         <div className="grid gap-4">

@@ -35,7 +35,7 @@ export default async function DashboardLayout({
 
     // if the user does not belong to any organizations, redirect to onboarding
     if (!orgs.length) {
-        redirect("/auth/create-team")
+        redirect("/onboarding/create")
     }
 
     return (

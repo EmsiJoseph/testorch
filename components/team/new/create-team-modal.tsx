@@ -16,7 +16,7 @@ import slugify from "@sindresorhus/slugify";
 import { toast } from "sonner";
 import {SubmitButton} from "@/components/common/submit-button";
 import {useUser} from "@auth0/nextjs-auth0/client";
-import {createOrganization} from "@/app/auth/create-team/actions"; // For handling form submission
+import {createOrganization} from "@/app/onboarding/create/actions";
 
 export const CreateTeamModal = () => {
     const { user } = useUser()

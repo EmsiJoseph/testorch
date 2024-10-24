@@ -13,7 +13,7 @@ export const GET = onboardingClient.handleAuth({
                     screen_hint: "signup",
                     login_hint: loginHint,
                 },
-                returnTo: "/auth/verify",
+                returnTo: "/onboarding/verify",
             }
         } catch (error) {
             console.error("Error during signup process:", error)

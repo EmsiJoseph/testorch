@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState} from "react";
 import {
     Dialog,
     DialogClose,
@@ -8,25 +8,27 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { PlusCircledIcon } from "@radix-ui/react-icons";
-import { Input } from "@/components/ui/input";
-import { Code } from "@/components/common/code";
+import {Button} from "@/components/ui/button";
+import {PlusCircledIcon} from "@radix-ui/react-icons";
+import {Input} from "@/components/ui/input";
+import {Code} from "@/components/common/code";
 import slugify from "@sindresorhus/slugify";
-import { toast } from "sonner";
 import {SubmitButton} from "@/components/common/submit-button";
 import {useUser} from "@auth0/nextjs-auth0/client";
 import {createOrganization} from "@/app/onboarding/create/actions";
+import {toast} from "sonner";
+import {createInfluxDbOrganization} from "@/components/team/new/actions";
+import {handleClientSideApiResponse, IClientSideApiHandlerResponse} from "@/lib/handle-client-side-api-response";
 
 export const CreateTeamModal = () => {
-    const { user } = useUser()
+    const {user} = useUser()
     const [teamName, setTeamName] = useState("");
 
     return (
         <Dialog>
             <DialogTrigger className="w-full h-full" asChild>
                 <Button variant="ghost" className="w-full justify-start h-full">
-                    <PlusCircledIcon className="mr-2 h-4 w-4" />
+                    <PlusCircledIcon className="mr-2 h-4 w-4"/>
                     Create Team
                 </Button>
             </DialogTrigger>
@@ -41,18 +43,24 @@ export const CreateTeamModal = () => {
 
                 <form
                     action={async (formData: FormData) => {
-                        const { error } = await createOrganization(formData)
+                        // const res = await createInfluxDbOrganization(formData)
+                        // const responseData: IClientSideApiHandlerResponse = {
+                        //     message: res?.message,
+                        //     success: res?.success,
+                        // }
+                        // handleClientSideApiResponse(responseData)
 
+                        const {error} = await createOrganization(formData)
                         if (error) {
                             toast.error(error)
-                        } else {
-                            toast.success("Your team has been created.")
+                            return
                         }
+
                     }}
                     className="space-y-6"
                 >
                     {/* Hidden email field */}
-                    <input type="hidden" name="email" value={user?.email || ""} />
+                    <input type="hidden" name="email" value={user?.email || ""}/>
 
                     {/* Team Name Input */}
                     <div className="space-y-2">

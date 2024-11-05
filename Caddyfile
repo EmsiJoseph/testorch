@@ -1,8 +1,9 @@
 {
-	auto_https disable_redirects
+    auto_https disable_redirects
+    admin off
 }
 
 testorch.com:8443 {
-	reverse_proxy 127.0.0.1:3005
-	tls internal
+    reverse_proxy 127.0.0.1:3005
+    tls internal
 }

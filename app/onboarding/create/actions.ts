@@ -3,7 +3,7 @@
 import {redirect} from "next/navigation"
 import slugify from "@sindresorhus/slugify"
 
-import {managementClient, onboardingClient} from "@/lib/auth0"
+import {appClient, managementClient, onboardingClient} from "@/lib/auth0"
 
 export async function createOrganization(formData: FormData) {
     const session = await onboardingClient.getSession()
@@ -12,6 +12,7 @@ export async function createOrganization(formData: FormData) {
         return redirect("/onboarding/signup")
     }
 
+
     const organizationName = formData.get("organization_name")
 
     if (!organizationName || typeof organizationName !== "string") {
@@ -19,6 +20,24 @@ export async function createOrganization(formData: FormData) {
             error: "Team name is required.",
         }
     }
+
+    const {accessToken} = await appClient.getAccessToken();
+
+    console.log(accessToken)
+    try {
+        const isExisting = await managementClient.organizations.getByName({
+            name: slugify(organizationName),
+        })
+
+        if (isExisting) {
+            return {
+                error: "Team already exists.",
+            }
+        }
+    } catch (error) {
+        //     Don't do anything and just proceed
+    }
+
 
     let organization
 
@@ -51,6 +70,8 @@ export async function createOrganization(formData: FormData) {
                 roles: [process.env.AUTH0_ADMIN_ROLE_ID],
             }
         )
+
+
     } catch (error) {
         console.error("failed to create an organization", error)
         return {
@@ -64,4 +85,5 @@ export async function createOrganization(formData: FormData) {
     })
 
     redirect(`/api/auth/login?${authParams.toString()}`)
+
 }

@@ -52,7 +52,7 @@ export default async function DashboardLayout({
                                 displayName: o.display_name!,
                                 logoUrl: o.branding?.logo_url,
                             }))}
-                            currentOrgId={session.user.org_id}
+                            currentOrgId={session.user.org_id || orgs[0].id}
                         />
 
                         {/* Dynamically render the navigation links */}

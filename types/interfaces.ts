@@ -7,3 +7,9 @@ export interface ITestPlan {
     testType: string
     project: string
 }
+
+export interface IPostRequestResponse<T> {
+    success?: boolean;
+    message: string;
+    data?: T;
+}

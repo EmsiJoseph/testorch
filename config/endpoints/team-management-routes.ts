@@ -1,0 +1,1 @@
+export const postCreateTeamRoute = "/team-management/create-team";

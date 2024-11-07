@@ -3,7 +3,7 @@
 import {toast} from "sonner";
 
 export interface IClientSideApiHandlerResponse {
-    message: string;
+    message?: string;
     success?: boolean;
 }
 
@@ -33,7 +33,6 @@ export const handleClientSideApiResponse = (
             duration: 5000,
             closeButton: true,
         });
-        return;
     } else {
         toast.error("Oops! Something went wrong.", {
             description: response.message,

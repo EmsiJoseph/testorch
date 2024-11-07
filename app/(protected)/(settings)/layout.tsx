@@ -2,8 +2,8 @@ import Link from "next/link"
 import { redirect } from "next/navigation"
 import { ArrowLeftIcon } from "@radix-ui/react-icons"
 
-import { appClient } from "@/lib/auth0"
-import { getRole } from "@/lib/roles"
+import { appClient } from "@/lib/auth0/auth0"
+import { getRole } from "@/lib/auth0/roles"
 import { Button } from "@/components/ui/button"
 import {
   Card,

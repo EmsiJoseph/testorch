@@ -1,7 +1,7 @@
 import { Session } from "@auth0/nextjs-auth0"
 
-import { appClient } from "./auth0"
-import { getRole, Role } from "./roles"
+import { appClient } from "./auth0/auth0"
+import { getRole, Role } from "./auth0/roles"
 
 interface Options {
   role?: Role

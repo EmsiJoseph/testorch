@@ -2,7 +2,7 @@ import { redirect } from "next/navigation"
 import { NextRequest } from "next/server"
 import { HandlerError } from "@auth0/nextjs-auth0"
 
-import { appClient } from "@/lib/auth0"
+import { appClient } from "@/lib/auth0/auth0"
 
 export const GET = appClient.handleAuth({
   login: appClient.handleLogin((request) => {

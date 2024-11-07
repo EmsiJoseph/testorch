@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation"
 
-import { appClient, managementClient } from "@/lib/auth0"
-import { getOrCreateDomainVerificationToken } from "@/lib/domain-verification"
+import { appClient, managementClient } from "@/lib/auth0/auth0"
+import { getOrCreateDomainVerificationToken } from "@/lib/auth0/domain-verification"
 
 import { UpdateOidcConnectionForm } from "./update-oidc-connection-form"
 

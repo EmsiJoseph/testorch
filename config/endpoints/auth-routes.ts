@@ -1,0 +1,1 @@
+export const addUserRoute = "/auth/add-user-from-auth0";

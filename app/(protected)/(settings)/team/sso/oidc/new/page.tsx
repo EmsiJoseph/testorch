@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { ArrowLeftIcon } from "@radix-ui/react-icons"
 
-import { appClient } from "@/lib/auth0"
-import { getOrCreateDomainVerificationToken } from "@/lib/domain-verification"
+import { appClient } from "@/lib/auth0/auth0"
+import { getOrCreateDomainVerificationToken } from "@/lib/auth0/domain-verification"
 import { Button } from "@/components/ui/button"
 import { AppBreadcrumb } from "@/components/common/app-breadcrumb"
 

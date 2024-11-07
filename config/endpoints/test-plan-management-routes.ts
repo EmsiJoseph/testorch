@@ -1,0 +1,1 @@
+export const postUploadTestPlanRoute = "/test-plan-management/upload";

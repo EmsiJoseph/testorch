@@ -1,4 +1,8 @@
-import {useState} from "react";
+import { createTeam } from "@/app/actions/create-team";
+import { createOrganization } from "@/app/actions/create-auth0-org";
+import { Code } from "@/components/common/code";
+import { SubmitButton } from "@/components/common/submit-button";
+import { Button } from "@/components/ui/button";
 import {
     Dialog,
     DialogClose,
@@ -8,17 +12,13 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
-import {Button} from "@/components/ui/button";
-import {PlusCircledIcon} from "@radix-ui/react-icons";
-import {Input} from "@/components/ui/input";
-import {Code} from "@/components/common/code";
+import { Input } from "@/components/ui/input";
+import { handleClientSideApiResponse, IClientSideApiHandlerResponse } from "@/lib/handlers/handle-client-side-api-response";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import { PlusCircledIcon } from "@radix-ui/react-icons";
 import slugify from "@sindresorhus/slugify";
-import {SubmitButton} from "@/components/common/submit-button";
-import {useUser} from "@auth0/nextjs-auth0/client";
-import {createOrganization} from "@/app/onboarding/create/actions";
-import {toast} from "sonner";
-import {createInfluxDbOrganization} from "@/components/team/new/actions";
-import {handleClientSideApiResponse, IClientSideApiHandlerResponse} from "@/lib/handle-client-side-api-response";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export const CreateTeamModal = () => {
     const {user} = useUser()
@@ -43,18 +43,21 @@ export const CreateTeamModal = () => {
 
                 <form
                     action={async (formData: FormData) => {
-                        // const res = await createInfluxDbOrganization(formData)
-                        // const responseData: IClientSideApiHandlerResponse = {
-                        //     message: res?.message,
-                        //     success: res?.success,
-                        // }
-                        // handleClientSideApiResponse(responseData)
 
-                        const {error} = await createOrganization(formData)
+                        const {error, organizationId} = await createOrganization(formData)
                         if (error) {
                             toast.error(error)
                             return
                         }
+                        
+                        formData.set("organization_id", organizationId || "")
+
+                        const res = await createTeam(formData)
+                        const responseData: IClientSideApiHandlerResponse = {
+                            message: res?.message,
+                            success: res?.success,
+                        }
+                        handleClientSideApiResponse(responseData)
 
                     }}
                     className="space-y-6"

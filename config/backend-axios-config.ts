@@ -22,6 +22,10 @@ export const setAuthorizationToken = (token: string) => {
     }
 };
 
+export const setContentHeader = (contentType: string) => {
+    TestorchAxiosConfig.defaults.headers["Content-Type"] = contentType;
+}
+
 // Response interceptor to catch and log errors
 TestorchAxiosConfig.interceptors.response.use(
     response => response,

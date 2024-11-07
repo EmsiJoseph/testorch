@@ -1,6 +1,6 @@
 import React, {ReactNode} from "react";
 import TestPlansView from "@/components/tests/test-plans-view";
-import {ITestPlan} from "@/types/interfaces";
+import { ITestPlan } from "@/lib/interfaces/test-plan.interfaces";
 
 type TestPlanGroupProps = {
     tests: ITestPlan[];

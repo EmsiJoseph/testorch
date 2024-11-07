@@ -118,8 +118,8 @@ const UploadTestPlanBtn = () => {
                     </div>
                 ) : (
                     <DropZone
-                        files={files}
-                        setFiles={setFiles}
+                        file={files}
+                        setFile={setFiles}
                         handleUpload={handleUpload}
                     />
                 )}

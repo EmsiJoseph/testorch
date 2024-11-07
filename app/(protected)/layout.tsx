@@ -3,7 +3,7 @@ import {redirect} from "next/navigation"
 import {UserProvider} from "@auth0/nextjs-auth0/client"
 import {SettingsIcon} from "lucide-react"
 
-import {appClient, managementClient} from "@/lib/auth0"
+import {appClient, managementClient} from "@/lib/auth0/auth0"
 import {Button} from "@/components/ui/button"
 import {TestorchLogo} from "@/components/common/testorch-logo"
 import {ModeToggle} from "@/components/common/mode-toggle"

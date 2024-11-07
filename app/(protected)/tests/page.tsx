@@ -1,5 +1,5 @@
-import TestPlansContainer from "@/components/tests/test-plans-container";
+import UnderConstruction from "@/components/common/under-construction";
 
 export default function Test() {
-    return <TestPlansContainer/>
+    return <UnderConstruction/>
 }

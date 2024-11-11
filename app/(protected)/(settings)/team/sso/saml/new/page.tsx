@@ -1,10 +1,7 @@
-import Link from "next/link"
-import { ArrowLeftIcon } from "@radix-ui/react-icons"
+import { appClient } from "@/lib/auth0/auth0"
 
-import { appClient } from "@/lib/auth0"
-import { getOrCreateDomainVerificationToken } from "@/lib/domain-verification"
-import { Button } from "@/components/ui/button"
 import { AppBreadcrumb } from "@/components/common/app-breadcrumb"
+import { getOrCreateDomainVerificationToken } from "@/lib/auth0/domain-verification"
 
 import { CreateSamlConnectionForm } from "./create-saml-connection-form"
 
@@ -18,10 +15,7 @@ export default async function CreateSamlConnection() {
   return (
     <div className="space-y-1">
       <div className="px-2 py-3">
-        <AppBreadcrumb
-          title="Back to connections"
-          href="/team/sso"
-        />
+        <AppBreadcrumb title="Back to connections" href="/team/sso" />
       </div>
 
       <CreateSamlConnectionForm

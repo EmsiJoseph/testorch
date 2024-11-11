@@ -3,8 +3,8 @@
 import { revalidatePath } from "next/cache"
 import { Session } from "@auth0/nextjs-auth0"
 
-import { managementClient } from "@/lib/auth0"
-import { Role, roles } from "@/lib/roles"
+import { managementClient } from "@/lib/auth0/auth0"
+import { Role, roles } from "@/lib/auth0/roles"
 import { withServerActionAuth } from "@/lib/with-server-action-auth"
 
 export const createInvitation = withServerActionAuth(

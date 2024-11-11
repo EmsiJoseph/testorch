@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { appClient } from "@/lib/auth0"
+import { appClient } from "@/lib/auth0/auth0"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {

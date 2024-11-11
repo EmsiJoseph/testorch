@@ -1,5 +1,5 @@
-import { appClient, managementClient } from "@/lib/auth0"
-import { SUPPORTED_PROVIDERS } from "@/lib/mfa-policy"
+import { appClient, managementClient } from "@/lib/auth0/auth0"
+import { SUPPORTED_PROVIDERS } from "@/lib/auth0/mfa-policy"
 import { PageHeader } from "@/components/common/page-header"
 
 import { MFAEnrollmentForm } from "./mfa-enrollment-form"

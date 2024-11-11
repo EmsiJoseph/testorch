@@ -3,7 +3,7 @@ import {StatusBadge} from "@/components/common/status-badge";
 import {ChevronRightIcon} from "@radix-ui/react-icons";
 import {FlaskConical} from "lucide-react";
 
-import {ITestPlan} from "@/types/interfaces";
+import { ITestPlan } from "@/lib/interfaces/test-plan.interfaces";
 
 const TestCardList: React.FC<ITestPlan> = ({name, status, completedOn, executedOn, duration, testType}) => {
     return (

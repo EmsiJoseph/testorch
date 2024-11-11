@@ -1,4 +1,4 @@
-import {onboardingClient} from "@/lib/auth0";
+import {onboardingClient} from "@/lib/auth0/auth0";
 import {redirect} from "next/navigation";
 
 export default async function VerifyLayout({

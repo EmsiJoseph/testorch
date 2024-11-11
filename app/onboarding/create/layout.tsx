@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation"
 import { UserProvider } from "@auth0/nextjs-auth0/client"
 
-import { onboardingClient } from "@/lib/auth0"
+import { onboardingClient } from "@/lib/auth0/auth0"
 
 export default async function CreateLayout({
   children,

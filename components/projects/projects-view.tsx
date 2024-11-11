@@ -1,11 +1,11 @@
 "use client"
 
-import {useUrlParams} from "@/lib/use-url-params";
+import {useUrlParams} from "@/lib/utils/use-url-params";
 import ProjectListView from "@/components/projects/project-list-view";
 import ProjectGridView from "@/components/projects/project-grid-view";
-import {ProjectCardProps} from "@/components/projects/project-card-grid";
+import {IProject} from "@/lib/interfaces/project.interfaces";
 
-export default function ProjectsView({projects}: { projects: ProjectCardProps[] }) {
+export default function ProjectsView({projects}: { projects: IProject[] }) {
     const {view} = useUrlParams();
     return (
         <>

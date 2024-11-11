@@ -1,6 +1,6 @@
 import React from "react";
 import TestCardGrid from "@/components/tests/test-plan-card-grid";
-import {ITestPlan} from "@/types/interfaces";
+import { ITestPlan } from "@/lib/interfaces/test-plan.interfaces";
 
 export type TestViewProps = {
     tests: ITestPlan[]

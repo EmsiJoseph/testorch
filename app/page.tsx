@@ -1,13 +1,12 @@
-import Link from "next/link"
 
-import { appClient } from "@/lib/auth0"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
 import { TestorchLogo } from "@/components/common/testorch-logo"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils/utils"
 
+import { SubmitButton } from "@/components/common/submit-button"
+import { appClient } from "@/lib/auth0/auth0"
 import { SignUpForm } from "./signup-form"
 import { WelcomeBackCard } from "./welcome-back-card"
-import { SubmitButton } from "@/components/common/submit-button"
 
 export default async function Home() {
   const session = await appClient.getSession()

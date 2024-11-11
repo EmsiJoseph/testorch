@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation"
 
-import { managementClient, onboardingClient } from "@/lib/auth0"
+import { managementClient, onboardingClient } from "@/lib/auth0/auth0"
 
 export async function resendVerificationEmail() {
   const session = await onboardingClient.getSession()

@@ -1,5 +1,5 @@
-import { appClient, managementClient } from "@/lib/auth0"
-import { Role } from "@/lib/roles"
+import { appClient, managementClient } from "@/lib/auth0/auth0"
+import { Role } from "@/lib/auth0/roles"
 import { PageHeader } from "@/components/common/page-header"
 
 import { CreateInvitationForm } from "./create-invitation-form"

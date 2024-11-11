@@ -1,7 +1,7 @@
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card"
 import {Activity, Calendar, Clock} from "lucide-react"
 import {StatusBadge} from "@/components/common/status-badge";
-import {ITestPlan} from "@/types/interfaces";
+import { ITestPlan } from "@/lib/interfaces/test-plan.interfaces";
 
 export default function TestPlanCard({
                                          name,

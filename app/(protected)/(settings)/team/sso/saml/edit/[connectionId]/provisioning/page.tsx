@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation"
 
-import { appClient, managementClient } from "@/lib/auth0"
+import { appClient, managementClient } from "@/lib/auth0/auth0"
 
 import { ScimForm } from "../../../../components/provisioning/scim-form"
 

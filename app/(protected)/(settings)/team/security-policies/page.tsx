@@ -1,5 +1,5 @@
-import { appClient, managementClient } from "@/lib/auth0"
-import { DEFAULT_MFA_POLICY } from "@/lib/mfa-policy"
+import { appClient, managementClient } from "@/lib/auth0/auth0"
+import { DEFAULT_MFA_POLICY } from "@/lib/auth0/mfa-policy"
 import { PageHeader } from "@/components/common/page-header"
 
 import { MfaPolicyForm } from "./mfa-policy-form"

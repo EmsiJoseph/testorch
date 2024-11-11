@@ -1,4 +1,4 @@
-import { appClient } from "@/lib/auth0"
+import { appClient } from "@/lib/auth0/auth0"
 import { PageHeader } from "@/components/common/page-header"
 
 import { DeleteAccountForm } from "./delete-account-form"

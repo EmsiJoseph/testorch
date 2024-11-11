@@ -1,129 +1,91 @@
 "use client"
 
-import React, {useState} from "react";
-import {Button} from "@/components/ui/button";
-import UnderConstruction from "@/components/common/under-construction";
+import { useState } from "react"
+import {
+  CreateProjectSchema,
+  TCreateProjectFormValues,
+} from "@/schemas/project"
+import { useUser } from "@auth0/nextjs-auth0/client"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useAction } from "next-safe-action/hooks"
+import { useRouter } from "nextjs-toploader/app"
+import { useForm } from "react-hook-form"
 
-// Define the interfaces for the props of each component
-interface NameProjectStepProps {
-    projectName: string;
-    setProjectName: (name: string) => void;
-    nextStep: () => void;
-}
+import { extractFormValidationErrorsAndTriggerToast } from "@/lib/utils/extract-form-validation-errors-and-trigger-toast"
+import handleExecuteAsync from "@/lib/handlers/handle-execute-async"
+import { createProjectFormSubmitting, projectId } from "@/lib/signals"
+import { Form } from "@/components/ui/form"
+import { createProject } from "@/app/actions/create-project"
 
-interface FinishSetupStepProps {
-    projectName: string;
-}
-
-interface ProgressIndicatorProps {
-    currentStep: number;
-}
-
-// Step 1: Name Your Project
-// Step 1: Name Your Project
-const NameProjectStep: React.FC<NameProjectStepProps> = ({projectName, setProjectName, nextStep}) => {
-    return (
-        <div className="text-center">
-            <h2 className="text-xl font-bold mb-16">Name your project</h2>
-
-            {/* Label and Input Container */}
-            <div className="flex flex-col items-center">
-                <div className="flex items-center mb-4">
-                    <label htmlFor="projectName" className="font-semibold text-foreground mr-4">
-                        Project name
-                    </label>
-                    <input
-                        type="text"
-                        id="projectName"
-                        value={projectName}
-                        onChange={(e) => setProjectName(e.target.value)}
-                        placeholder="Add a name"
-                        className="border border-gray-300 bg-transparent rounded-md px-4 py-2 w-64 focus:outline-none focus:border-foreground"
-                    />
-                </div>
-                <p className="text-gray-500 mb-4">
-                    After creating a project, you can add test plans later.
-                </p>
-                <Button
-                    onClick={nextStep}
-                    disabled={!projectName}
-                >
-                    Create team
-                </Button>
-            </div>
-        </div>
-    );
-};
-
-// Step 2: Finish Setup
-const FinishSetupStep: React.FC<FinishSetupStepProps> = ({projectName}) => {
-    return (
-        <UnderConstruction/>
-    );
-};
-
-// Progress Indicator Component
-const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({currentStep}) => {
-    return (
-        <div className="flex justify-center mb-16">
-            <div className="flex space-x-20">
-                {/* Step 1 */}
-                <div className="flex items-center space-x-2">
-                    <div
-                        className={`flex items-center justify-center w-6 h-6 rounded-full border-2 ${
-                            currentStep >= 1 ? "border-foreground text-foreground" : "border-gray-500 text-gray-500"
-                        }`}
-                    >
-                        1
-                    </div>
-                    <span className={currentStep >= 1 ? "text-foreground" : "text-gray-500"}>
-                        Name your project
-                    </span>
-                </div>
-
-                {/* Step 2 */}
-                <div className="flex items-center space-x-2">
-                    <div
-                        className={`flex items-center justify-center w-6 h-6 rounded-full border-2 ${
-                            currentStep >= 2 ? "border-foreground text-foreground" : "border-gray-500 text-gray-500"
-                        }`}
-                    >
-                        2
-                    </div>
-                    <span className={currentStep >= 2 ? "text-foreground" : "text-gray-500"}>
-                        Finish setup
-                    </span>
-                </div>
-            </div>
-        </div>
-    );
-};
+import ProgressIndicator from "../../common/form-step-progress"
+import AddDescriptionStep from "./steps/add-description-step"
+import NameProjectStep from "./steps/name-project-step"
 
 // Main Create Project Container
 export default function CreateProjectContainer() {
-    const [currentStep, setCurrentStep] = useState<number>(1);
-    const [projectName, setProjectName] = useState<string>("");
+  const [currentStep, setCurrentStep] = useState<number>(1)
 
-    const nextStep = () => {
-        setCurrentStep(currentStep + 1);
-    };
+  const steps = ["Name Project", "Add description"]
 
-    return (
+  const nextStep = () => {
+    setCurrentStep(currentStep + 1)
+  }
 
-        <div className="container mx-auto p-6">
-            {/* Progress Indicator */}
-            <ProgressIndicator currentStep={currentStep}/>
+  const prevStep = () => {
+    setCurrentStep(currentStep - 1)
+  }
 
-            {/* Step Components */}
-            {currentStep === 1 && (
-                <NameProjectStep
-                    projectName={projectName}
-                    setProjectName={setProjectName}
-                    nextStep={nextStep}
-                />
-            )}
+  const { user } = useUser()
+  const { executeAsync, isExecuting } = useAction(createProject)
+  const router = useRouter()
 
-            {currentStep === 2 && <FinishSetupStep projectName={projectName}/>}
-        </div>
-    );
+  const form = useForm<TCreateProjectFormValues>({
+    resolver: zodResolver(CreateProjectSchema),
+    defaultValues: {
+      name: "",
+      description: "",
+      auth0_org_id: user?.org_id || "",
+      email: user?.email || "",
+    },
+    mode: "onChange",
+  })
+
+  const onSubmit = async () => {
+    form.setValue("auth0_org_id", user?.org_id || "")
+    form.setValue("email", user?.email || "")
+    const formValues = form.getValues()
+    createProjectFormSubmitting.value = true
+    const res = await handleExecuteAsync<TCreateProjectFormValues>(
+      executeAsync,
+      formValues
+    )
+    if (res?.data?.success) {
+      form.reset()
+      createProjectFormSubmitting.value = false
+      router.push(`/projects`)
+    } else {
+      createProjectFormSubmitting.value = false
+    }
+  }
+
+  return (
+    <div className="container mx-auto p-6">
+      {/* Progress Indicator */}
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit, (errors) => {
+            extractFormValidationErrorsAndTriggerToast(errors)
+          })}
+          className="space-y-6"
+        >
+          <ProgressIndicator currentStep={currentStep} steps={steps} />
+
+          {/* Step Components */}
+          {currentStep === 1 && <NameProjectStep nextStep={nextStep} />}
+
+          {currentStep === 2 && <AddDescriptionStep prevStep={prevStep} />}
+        </form>
+      </Form>
+    </div>
+  )
 }

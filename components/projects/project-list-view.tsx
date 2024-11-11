@@ -1,22 +1,18 @@
 import React from "react";
 import ProjectCardList from "@/components/projects/project-card-list";
-import {ProjectCardProps} from "@/components/projects/project-card-grid";
+import {IProject} from "@/lib/interfaces/project.interfaces";
 
-type ProjectListViewProps = {
-    projects: ProjectCardProps[]
+export type ProjectViewProps = {
+    projects: IProject[]
 };
 
-const ProjectListView: React.FC<ProjectListViewProps> = ({ projects }) => {
+const ProjectListView: React.FC<ProjectViewProps> = ({projects}) => {
     return (
         <div className="space-y-4">
             {projects.map((project, index) => (
                 <ProjectCardList
                     key={index}
-                    name={project.name}
-                    url={project.url}
-                    lastTestName={project.lastTestName}
-                    lastTestTime={project.lastTestTime}
-                    status={project.status}
+                    project={project}
                 />
             ))}
         </div>

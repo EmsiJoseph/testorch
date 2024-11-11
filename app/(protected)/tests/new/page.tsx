@@ -1,5 +1,5 @@
-import UploadTestPlanContainer from "@/components/tests/new/upload-test-plan-container";
+import AddTestContainer from "@/components/tests/new/add-test-container"
 
-export default function Page() {
-    return <UploadTestPlanContainer/>
+export default async function Page() {
+  return <AddTestContainer />
 }

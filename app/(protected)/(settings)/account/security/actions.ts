@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
-import { appClient, managementClient } from "@/lib/auth0"
+import { appClient, managementClient } from "@/lib/auth0/auth0"
 
 export async function createEnrollment(formData: FormData) {
   const session = await appClient.getSession()

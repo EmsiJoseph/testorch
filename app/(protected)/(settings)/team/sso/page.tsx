@@ -1,4 +1,4 @@
-import { appClient, managementClient } from "@/lib/auth0"
+import { appClient, managementClient } from "@/lib/auth0/auth0"
 import { PageHeader } from "@/components/common/page-header"
 
 import { ConnectionsList } from "./connections-list"

@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache"
 import { Session } from "@auth0/nextjs-auth0"
 import slugify from "@sindresorhus/slugify"
 
-import { managementClient } from "@/lib/auth0"
+import { managementClient } from "@/lib/auth0/auth0"
 import { verifyDnsRecords } from "@/lib/domain-verification"
 import { withServerActionAuth } from "@/lib/with-server-action-auth"
 

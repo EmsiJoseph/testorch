@@ -21,6 +21,8 @@ export interface ITestPlan {
   name: string
   description: string | null
   project_id: string
-  created_by: string
+  location: string
+  type: string
+  createdByName: string
   created_at: string
 }

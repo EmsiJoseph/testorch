@@ -7,6 +7,10 @@ import ProjectsContainer from "@/components/projects/project-container"
 export default async function Projects() {
   const session = await appClient.getSession()
 
+  // const { accessToken } = await appClient.getAccessToken()
+
+  // console.log(accessToken)
+
   // if the user is not authenticated, redirect to login
   if (!session?.user) {
     redirect("/api/auth/login")
@@ -14,5 +18,10 @@ export default async function Projects() {
 
   const res = await getProjects(session.user.org_id)
 
-  return <ProjectsContainer projects={res ? res.data : []} />
+  return (
+    <ProjectsContainer
+      projects={res ? res.data : []}
+      error={res ? res.message : null}
+    />
+  )
 }

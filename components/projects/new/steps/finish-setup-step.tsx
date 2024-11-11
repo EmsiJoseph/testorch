@@ -5,7 +5,7 @@ import UnderConstruction from "@/components/common/under-construction";
 import { FinishSetupStepProps } from "@/lib/interfaces/project.interfaces";
 
 // Step 2: Finish Setup
-const FinishSetupStep: React.FC<FinishSetupStepProps> = ({ projectName }) => {
+const FinishSetupStep: React.FC<FinishSetupStepProps> = () => {
     return (
         <UnderConstruction />
     );

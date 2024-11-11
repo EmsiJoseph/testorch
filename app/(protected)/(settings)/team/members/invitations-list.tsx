@@ -3,7 +3,7 @@
 import { CopyIcon, DotsVerticalIcon, TrashIcon } from "@radix-ui/react-icons"
 import { toast } from "sonner"
 
-import { Role } from "@/lib/roles"
+import { Role } from "@/lib/auth0/roles"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {

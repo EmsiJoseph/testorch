@@ -23,7 +23,6 @@ export const handleServerSideApiResponse = async <T>({
     return { message: "Unexpected status code received.", data: response.data }
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
-      console.log("Axios error details:", error.response)
       if (error.response) {
         // Handle specific error codes
         if (error.response.status === 422) {

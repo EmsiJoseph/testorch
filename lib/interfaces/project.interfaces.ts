@@ -1,9 +1,9 @@
+import { IApiResponse } from "./api-response.interfaces"
 import { ITestPlan } from "./test-plan.interfaces"
 
-export interface NameProjectStepProps {
-  projectName: string
-  setProjectName: (name: string) => void
-  nextStep: () => void
+export interface FormStepProps {
+  nextStep?: () => void
+  prevStep?: () => void
 }
 
 export interface FinishSetupStepProps {
@@ -23,3 +23,7 @@ export interface IProject {
   created_by: string
   recentTestPlan: ITestPlan[]
 }
+
+export interface ICreateProjectResponse
+  extends IApiResponse<IProject> {}
+

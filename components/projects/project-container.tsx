@@ -1,26 +1,49 @@
 "use client"
 
 import { useRouter } from "nextjs-toploader/app"
+import { useEffect } from "react"
 
 import SearchAndControls from "@/components/common/search-and-controls"
-import { IProject } from "@/lib/interfaces/project.interfaces"
 import ProjectsView from "@/components/projects/projects-view"
 import RecentActivitiesList from "@/components/projects/recent-activity-list"
+import { handleClientSideApiResponse } from "@/lib/handlers/handle-client-side-api-response"
 import useFilteredItems from "@/lib/hooks/use-filtered-items"
+import { IProject } from "@/lib/interfaces/project.interfaces"
+import { useProjectsStore } from "@/lib/stores/use-projects"
 
 import { NoDataFallback } from "../common/no-data-fallback"
 import { NoSearchResultsFallback } from "../common/no-search-results-fallback"
 
 interface ProjectsContainerProps {
-  projects: IProject[] | undefined;
+  projects: IProject[] | undefined
+  error: string | null
 }
 
-export default function ProjectsContainer({ projects }: ProjectsContainerProps) {
-  
-  const { filteredItems = [], handleSearch, query } = useFilteredItems(
-    projects,
-    (project, query) =>
-      project.name.toLowerCase().includes(query) 
+export default function ProjectsContainer({
+  projects,
+  error,
+}: ProjectsContainerProps) {
+  const { addProjects } = useProjectsStore()
+
+  useEffect(() => {
+    if (projects) {
+      addProjects(projects)
+    }
+    if (error && !projects) {
+      console.log(error)
+      handleClientSideApiResponse({
+        error: error,
+        success: false,
+      })
+    }
+  }, [projects, addProjects])
+
+  const {
+    filteredItems = [],
+    handleSearch,
+    query,
+  } = useFilteredItems(projects, (project, query) =>
+    project.name.toLowerCase().includes(query)
   )
 
   const router = useRouter()
@@ -29,6 +52,8 @@ export default function ProjectsContainer({ projects }: ProjectsContainerProps) 
     router.push("/projects/new")
   }
 
+  console.log(projects)
+  console.log(projects?.length)
   return (
     <div className="flex flex-col">
       <div className="flex flex-1 overflow-hidden ">
@@ -40,7 +65,7 @@ export default function ProjectsContainer({ projects }: ProjectsContainerProps) 
               handleSearch={handleSearch}
               placeholder="Search projects and urls"
             />
-            {projects?.length === 0 ? (
+            {!projects || projects.length === 0 ? (
               <NoDataFallback
                 onClick={() => {
                   handleNewProject()

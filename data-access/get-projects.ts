@@ -12,6 +12,9 @@ export const getProjects = async (
     return data // Return the data if successful
   } else {
     console.warn("Failed to fetch projects.") // Optional: Add error handling/logging here
-    return null // Explicitly return null in case of failure
+
+    return {
+      message: "Failed to fetch projects.",
+    } // Explicitly return null in case of failure
   }
 }

@@ -11,7 +11,7 @@ import {
 import { format, formatDistance } from "date-fns"
 import { toast } from "sonner"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils/utils"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import {
   AlertDialog,

@@ -1,7 +1,7 @@
 "use client";
 
 import { Input } from "../ui/input";
-import { cn } from "../../lib/utils";
+import { cn } from "../../lib/utils/utils";
 import {
   Dispatch,
   SetStateAction,

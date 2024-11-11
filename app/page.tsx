@@ -1,7 +1,7 @@
 
 import { TestorchLogo } from "@/components/common/testorch-logo"
 import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils/utils"
 
 import { SubmitButton } from "@/components/common/submit-button"
 import { appClient } from "@/lib/auth0/auth0"

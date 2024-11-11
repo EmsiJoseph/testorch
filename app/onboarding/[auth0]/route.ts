@@ -1,4 +1,4 @@
-import { onboardingClient } from "@/lib/auth0"
+import { onboardingClient } from "@/lib/auth0/auth0"
 
 export const GET = onboardingClient.handleAuth({
     signup: onboardingClient.handleLogin((request) => {

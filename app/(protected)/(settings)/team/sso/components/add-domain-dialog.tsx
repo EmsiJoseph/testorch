@@ -10,7 +10,7 @@ import {
 import { toast } from "sonner"
 
 import { DOMAIN_VERIFICATION_RECORD_IDENTIFIER } from "@/lib/constants"
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils/utils"
 import { Button } from "@/components/ui/button"
 import {
   Card,

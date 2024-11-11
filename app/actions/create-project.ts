@@ -13,6 +13,8 @@ import { handleSetAuthToken } from "@/lib/handlers/handle-set-auth-token"
 import { actionClient } from "@/lib/safe-action"
 import { IUploadTestPlanResponse } from "@/lib/interfaces/test-plan.interfaces"
 import { CreateProjectSchema } from "@/schemas/project"
+import { ICreateProjectResponse } from "@/lib/interfaces/project.interfaces"
+import { creaeteProjectRoute } from "@/config/endpoints/project-management-routes"
 
 export const createProject = actionClient
   .schema(CreateProjectSchema, {
@@ -23,23 +25,27 @@ export const createProject = actionClient
     async ({
       parsedInput,
     }: {
-      parsedInput: { file: string; fileName: string }
+      parsedInput: { name: string; auth0_org_id: string; email: string }
     }) => {
       const request = async (): Promise<
-        AxiosResponse<IUploadTestPlanResponse>
+        AxiosResponse<ICreateProjectResponse>
       > => {
         await handleSetAuthToken()
 
-        return await TestorchAxiosConfig.post<IUploadTestPlanResponse>(
-          postUploadTestPlanRoute,
-          { file: parsedInput.file, fileName: parsedInput.fileName }
+        return await TestorchAxiosConfig.post<ICreateProjectResponse>(
+          creaeteProjectRoute,
+          {
+            name: parsedInput.name,
+            auth0_org_id: parsedInput.auth0_org_id,
+            email: parsedInput.email,
+          }
         )
       }
 
       return await handleServerSideApiResponse({
         request,
-        successMessage: "Test plan uploaded successfully!",
-        errorMessage: "Failed to upload test plan.",
+        successMessage: "Project created successfully!",
+        errorMessage: "Failed to create project.",
       })
     }
   )

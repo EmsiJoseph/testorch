@@ -13,9 +13,10 @@ export default async function handleExecuteAsync<T>(
 
     // Prepare the response to pass to the client-side handler
     const responseData: IClientSideApiHandlerResponse = {
-      message: res?.message || "No message provided",
-      success: res?.success || false,
+      message: res?.data.message || "No message provided",
+      success: res?.data.success || false,
     }
+
 
     // Pass the response data to the client-side handler function
     handleClientSideApiResponse(responseData)

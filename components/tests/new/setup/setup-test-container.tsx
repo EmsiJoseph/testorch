@@ -15,24 +15,21 @@ import {
 import { useAction } from "next-safe-action/hooks"
 import { useRouter } from "nextjs-toploader/app"
 import { useForm } from "react-hook-form"
+import { useState } from "react"
 
+import { extractFormValidationErrorsAndTriggerToast } from "@/lib/utils/extract-form-validation-errors-and-trigger-toast"
 import { ITestData } from "@/lib/interfaces/test-plan.interfaces"
-import handleExecuteAsync from "@/lib/handlers/handle-execute-async"
 import { Button } from "@/components/ui/button"
+import { Form } from "@/components/ui/form"
 import { addTest } from "@/app/actions/add-test"
 
 import TestNameSection from "./test-name-section"
 import TestPlanNav from "./test-plan-nav"
+import { SubmitButton } from "@/components/common/submit-button"
 
 export default function SetupTestContainer({ params }: { params: ITestData }) {
   const { fileName, fullUrls, urlDefined } = params
   const formattedFileName = fileName.replace(/\.[^/.]+$/, "")
-  const defaultValues = {
-    fileName: formattedFileName,
-    workers: 1,
-    users: 50,
-    spawnRate: 10,
-  }
   const testTypes = [
     { name: "Load Test", icon: Activity },
     { name: "Stress Test", icon: AlertTriangle },
@@ -54,23 +51,29 @@ export default function SetupTestContainer({ params }: { params: ITestData }) {
   const form = useForm<TAddTestFormValues>({
     resolver: zodResolver(AddTestSchema),
     defaultValues: {
-      userEmail: user?.email || "",
-      testName: "",
+      name: formattedFileName,
+      fileName: fileName,
+      email: user?.email || "",
+      projectId: "",
+      type: "jmx"
     },
     mode: "onChange",
   })
 
+  const [hasEmptyRequiredFields, setHasEmptyRequiredFields] = useState(false)
+
   const onSubmit = async () => {
     const formValues = form.getValues()
-    const res = await handleExecuteAsync<TAddTestFormValues>(
-      executeAsync,
-      formValues
-    )
+    console.log(formValues)
+    // const res = await handleExecuteAsync<TAddTestFormValues>(
+    //   executeAsync,
+    //   formValues
+    // )
 
-    if (res?.data?.success) {
-      form.reset()
-      router.push(``)
-    }
+    // if (res?.data?.success) {
+    //   form.reset()
+    //   router.push(``)
+    // }
   }
 
   return (
@@ -84,16 +87,36 @@ export default function SetupTestContainer({ params }: { params: ITestData }) {
               documentation site.
             </p>
           </div>
-          <TestNameSection defaultName={defaultValues.fileName} />
-          {/* <TestTypeSelection
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit, (errors) => {
+                console.log(errors)
+                extractFormValidationErrorsAndTriggerToast(errors)
+              })}
+              className="space-y-6"
+            >
+              <TestNameSection setHasEmptyRequiredFields={setHasEmptyRequiredFields} />
+              {/* <TestTypeSelection
             testTypes={testTypes}
             onSelect={handleTestTypeSelect}
           /> */}
 
-          <div className="mt-8 flex justify-end space-x-3">
-            <Button variant="outline">Cancel</Button>
-            <Button>Add Test</Button>
-          </div>
+              <div className="mt-8 flex justify-end space-x-3">
+                <Button
+                  onClick={() => router.push("/projects")}
+                  variant="outline"
+                >
+                  Cancel
+                </Button>
+                <SubmitButton
+                  disabled={isExecuting || hasEmptyRequiredFields}
+                  type="submit"
+                >
+                  Add Test
+                </SubmitButton>
+              </div>
+            </form>
+          </Form>
         </div>
       </main>
 

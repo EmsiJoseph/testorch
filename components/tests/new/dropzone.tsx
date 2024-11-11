@@ -1,20 +1,21 @@
-"use client";
+"use client"
 
-import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
+import { Paperclip } from "lucide-react"
+import { useTheme } from "next-themes"
+
+import { Button } from "@/components/ui/button"
 import {
+  FileInput,
   FileUploader,
   FileUploaderContent,
   FileUploaderItem,
-  FileInput,
-} from "@/components/ui/imageupload";
-import { Paperclip } from "lucide-react";
+} from "@/components/ui/imageupload"
 
 const FileSvgDraw = () => {
   return (
     <>
       <svg
-        className="w-8 h-8 mb-3 text-gray-500 dark:text-gray-400"
+        className="mb-3 h-8 w-8 text-gray-500 dark:text-gray-400"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -32,21 +33,25 @@ const FileSvgDraw = () => {
         <span className="font-semibold">Click to upload</span>
         &nbsp; or drag and drop
       </p>
-      <p className="text-xs text-gray-500 dark:text-gray-400">JMX or XML only</p>
+      <p className="text-xs text-gray-500 dark:text-gray-400">
+        JMX or XML only
+      </p>
     </>
-  );
-};
+  )
+}
 
 const DropZone = ({
   file,
   setFile,
-  handleUpload,
+  nextStep,
+  prevStep,
 }: {
-  file: File | null;
-  setFile: React.Dispatch<React.SetStateAction<File | null>>;
-  handleUpload: () => void;
+  file: File | null
+  setFile: React.Dispatch<React.SetStateAction<File | null>>
+  nextStep?: () => void
+  prevStep?: () => void
 }) => {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   const dropZoneConfig = {
     accept: {
@@ -56,14 +61,14 @@ const DropZone = ({
     maxFiles: 1,
     maxSize: 1024 * 1024 * 4, // 4MB max file size
     multiple: false, // Allow only single file upload
-  };
+  }
 
   return (
     <FileUploader
       value={file}
       onValueChange={setFile}
       dropzoneOptions={dropZoneConfig}
-      className={`relative rounded-lg p-2 bg-field`}
+      className={`relative rounded-lg bg-field p-2`}
     >
       <div className="grid gap-[16px]">
         <FileInput
@@ -71,7 +76,7 @@ const DropZone = ({
             theme === "dark" ? "outline-gray-600" : "outline-gray-200"
           }`}
         >
-          <div className="flex items-center justify-center flex-col pt-3 pb-4 w-full ">
+          <div className="flex w-full flex-col items-center justify-center pb-4 pt-3 ">
             <FileSvgDraw />
           </div>
         </FileInput>
@@ -85,20 +90,19 @@ const DropZone = ({
               </FileUploaderItem>
             )}
 
-            <Button
-              variant="default"
-              onClick={() => {
-                handleUpload();
-              }}
-              disabled={!file}
-            >
-              Upload Test
-            </Button>
+            <div className="w-full justify-between space-x-3">
+              <Button variant="secondary" onClick={prevStep}>
+                Back
+              </Button>
+              <Button variant="default" onClick={nextStep} disabled={!file}>
+                Next
+              </Button>
+            </div>
           </div>
         </FileUploaderContent>
       </div>
     </FileUploader>
-  );
-};
+  )
+}
 
-export default DropZone;
+export default DropZone

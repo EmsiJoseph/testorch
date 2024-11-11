@@ -1,28 +1,63 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
+import { useFormContext } from "react-hook-form"
 
-export default function TestNameSection({
-  defaultName,
-}: {
-  defaultName: string
-}) {
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { addTestPlanFormIsSubmitting } from "@/lib/signals"
+
+export default function TestNameSection() {
+  const form = useFormContext()
+
   return (
-    <Card className="bg-field dark:bg-neutral-950">
+    <Card className="w-[400px] bg-field dark:bg-neutral-950">
       <CardHeader>
         <CardTitle>Test Name</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <p className="text-sm text-muted-foreground">
-          The test name is used for display and reporting purposes. Please
-          provide one below.
-        </p>
-        <div className="flex gap-4">
-          <Input
-            placeholder="Enter name"
-            defaultValue={defaultName}
-            className="max-w-md"
-          />
-        </div>
+        <FormField
+          disabled={addTestPlanFormIsSubmitting.value}
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem className="flex w-full flex-col">
+               <FormLabel>Test Name</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="Enter name"
+                  {...field}
+                  defaultValue={form.getValues("name")}
+                  className="max-w-md"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          disabled={addTestPlanFormIsSubmitting.value}
+          control={form.control}
+          name="description"
+          render={({ field }) => (
+            <FormItem className="flex w-full flex-col">
+              <FormLabel>Description</FormLabel>
+              <FormControl>
+                <Textarea
+                  placeholder="Enter description"
+                  {...field}
+                  className="max-w-md"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
       </CardContent>
     </Card>
   )

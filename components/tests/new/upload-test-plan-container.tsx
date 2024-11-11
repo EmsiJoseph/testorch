@@ -66,7 +66,7 @@ const UploadTestPlanContainer = () => {
             <DropZone
               file={file}
               setFile={setFile}
-              handleUpload={handleUpload}
+              nextStep={handleUpload}
             />
           )}
         </div>

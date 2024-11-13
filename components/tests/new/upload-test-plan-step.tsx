@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react"
 import { useSignalEffect } from "@preact/signals-react"
 import { useFormContext } from "react-hook-form"
 
-import { FormStepProps } from "@/lib/interfaces/project.interfaces"
+import { StepProps } from "@/lib/interfaces/project.interfaces"
 import { Code } from "@/components/common/code"
 import DropZone from "@/components/tests/new/dropzone"
 
-const UploadTestPlanStep: React.FC<FormStepProps> = ({
+const UploadTestPlanStep: React.FC<StepProps> = ({
   prevStep,
   nextStep,
 }) => {

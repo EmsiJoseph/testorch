@@ -3,40 +3,59 @@ import { Worker } from '../interfaces/api-response.interfaces';
 
 interface StoreState {
     workers: Worker[];
-    progress: string;
+    buildStatus: string;
+    buildProgress: {
+        progress: string;
+        remainingTime: string;
+    };
     lastUpdated: number;
-    addWorker: (worker: Worker) => void;
+    addWorkers: (workers: Worker[]) => void;
     updateWorker: (id: string, updatedWorker: Partial<Worker>) => void;
-    setProgress: (progress: string) => void;
+    setBuildStatus: (status: string) => void;
+    setBuildProgress: (progress: { progress: string; remainingTime: string }) => void;
     clearAll: () => void;
 }
 
 const useSocketsStore = create<StoreState>()(
-        (set) => ({
-            workers: [],
+    (set) => ({
+        workers: [],
+        buildStatus: '',
+        buildProgress: {
             progress: '',
-            lastUpdated: Date.now(),
-            addWorker: (worker: Worker) => set((state) => ({
-                workers: state.workers.some(w => w.type === worker.type) ? state.workers : [...state.workers, worker],
-                lastUpdated: Date.now()
-            })),
-            updateWorker: (type: string, updatedWorker: Partial<Worker>) => set((state) => ({
-                workers: state.workers.map((worker) =>
-                    worker.type === type ? { ...worker, ...updatedWorker } : worker
-                ),
-                lastUpdated: Date.now()
-            })),
-            setProgress: (progress: string) => set({
-                progress,
-                lastUpdated: Date.now()
-            }),
-            clearAll: () => set({
-                workers: [],
+            remainingTime: ''
+        },
+        lastUpdated: Date.now(),
+        addWorkers: (newWorkers: Worker[]) => set((state) => ({
+            workers: [
+                ...state.workers,
+                ...newWorkers.filter(newWorker => !state.workers.some(worker => worker.type === newWorker.type))
+            ],
+            lastUpdated: Date.now()
+        })),
+        updateWorker: (type: string, updatedWorker: Partial<Worker>) => set((state) => ({
+            workers: state.workers.map((worker) =>
+                worker.type === type ? { ...worker, ...updatedWorker } : worker
+            ),
+            lastUpdated: Date.now()
+        })),
+        setBuildStatus: (status: string) => set({
+            buildStatus: status,
+            lastUpdated: Date.now()
+        }),
+        setBuildProgress: (progress: { progress: string; remainingTime: string }) => set({
+            buildProgress: progress,
+            lastUpdated: Date.now()
+        }),
+        clearAll: () => set({
+            workers: [],
+            buildStatus: '',
+            buildProgress: {
                 progress: '',
-                lastUpdated: Date.now()
-            }),
-        }
-    )
+                remainingTime: ''
+            },
+            lastUpdated: Date.now()
+        }),
+    })
 );
 
 export default useSocketsStore;

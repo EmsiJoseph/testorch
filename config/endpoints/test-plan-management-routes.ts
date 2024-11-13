@@ -6,4 +6,4 @@ export const getTestPlansRoute = (projectName: string) =>
 
 export const postStartTestPlanRoute = "/test-plan-management/start-test"
 
-export const postStartTestPlanRouteV2 = "/test-plan-management/start-test-v2"
+export const postStartTestPlanRouteV3 = "/test-plan-management/start-test-v3"

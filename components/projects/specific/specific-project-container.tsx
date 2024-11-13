@@ -26,9 +26,8 @@ export default function SpecificProjectContainer({
     useProjectsStore()
 
   const formattedProjectName = decodeURIComponent(projectName)
-
   useSignalEffect(() => {
-    const project = findProjectByName(projectName)
+    const project = findProjectByName(formattedProjectName)
     if (project) {
       projectId.value = project.id
       selectProject(project)
@@ -36,7 +35,7 @@ export default function SpecificProjectContainer({
     addTestPlans(tests || [])
 
     if (error && !tests) {
-      console.log(error)
+      console.log("This is the error: ", error)
       handleClientSideApiResponse({
         error: error,
         success: false,

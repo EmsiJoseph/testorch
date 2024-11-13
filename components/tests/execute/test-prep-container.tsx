@@ -1,11 +1,17 @@
 "use client"
 
-import { TStartTestPlanFormValues, TStartTestPlanFormValuesV2 } from "@/schemas/test-plan"
+import { useEffect, useRef } from "react"
+import { useUser } from "@auth0/nextjs-auth0/client"
 import { useSignalEffect } from "@preact/signals-react"
-import { CloudIcon, Settings2Icon } from "lucide-react"
-import { useAction } from "next-safe-action/hooks"
+import { Bot, CloudIcon, Settings2Icon } from "lucide-react"
 
-import { startTestPlan } from "@/app/actions/start-test-plan"
+import socket from "@/lib/clients/socket-io"
+import { handleClientSideApiResponse } from "@/lib/handlers/handle-client-side-api-response"
+import { StepProps } from "@/lib/interfaces/project.interfaces"
+import { useProjectsStore } from "@/lib/stores/use-projects"
+import useSocketsStore from "@/lib/stores/use-sockets"
+import { useTestPlansStore } from "@/lib/stores/use-tests"
+import { formatFriendlyDate } from "@/lib/utils/date-utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import {
   Table,
@@ -15,68 +21,84 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import socket from "@/lib/clients/socket-io-client"
-import { handleClientSideApiResponse } from "@/lib/handlers/handle-client-side-api-response"
-import handleExecuteAsync from "@/lib/handlers/handle-execute-async"
-import useSocketsStore from "@/lib/stores/use-sockets"
-import { useTestPlansStore } from "@/lib/stores/use-tests"
-import { formatFriendlyDate } from "@/lib/utils/date-utils"
-import { startTestPlanv2 } from "@/app/actions/start-test-plan v2"
-import { useProjectsStore } from "@/lib/stores/use-projects"
 
-export default function TestPrepContainer() {
+const TestPrepContainer: React.FC<StepProps> = ({ nextStep }) => {
   const { selectedTestPlan } = useTestPlansStore()
-  const {selectedProject} = useProjectsStore()
-  const { executeAsync, isExecuting } = useAction(startTestPlanv2)
-  const { progress, workers, setProgress, addWorker, lastUpdated } =
+  const { selectedProject } = useProjectsStore()
+  const { buildStatus, workers, setBuildStatus, addWorkers, lastUpdated } =
     useSocketsStore()
 
-  useSignalEffect(() => {
-    const executeTestPlan = async () => {
-      console.log("selectedTestPlan", selectedTestPlan)
-      console.log("selectedProject", selectedProject)
+  const { user } = useUser()
+  const hasExecutedRef = useRef(false)
+
+  useEffect(() => {
+    if (hasExecutedRef.current) return
+    hasExecutedRef.current = true
+
+    const executeTestPlan = () => {
       if (!selectedTestPlan) {
         handleClientSideApiResponse({
           success: false,
           message: "File not found",
         })
+        return
       }
-      try {
-        await handleExecuteAsync<TStartTestPlanFormValuesV2>(executeAsync, {
-          testPlanName: selectedTestPlan?.name ?? "",
-          workerNodes: 1,
-          projectName: selectedProject?.name ?? "",
-        })
-      } catch (error) {
-        handleClientSideApiResponse({
-          success: false,
-          message: "Error launching test",
-        })
-      }
+      socket.emit("startTestV3", {
+        testPlanName: selectedTestPlan?.name ?? "",
+        email: user?.email ?? "",
+        auth0_org_id: user?.org_id ?? "",
+        workerNodes: 1,
+        projectName: selectedProject?.name ?? "",
+        protocol: "http",
+        host: "localhost",
+        basePath: "/",
+        threadCount: 1,
+        startUpTime: 1,
+        holdLoadTime: 1,
+        shutdownTime: 1,
+        targetThroughputPerMin: 1,
+      })
     }
 
     executeTestPlan()
-    // Listen for progress updates
-    socket.on("progressUpdate", (progress) => {
-      console.log("Progress Update: ", progress)
-      setProgress(progress)
+  }, [])
+
+  useSignalEffect(() => {
+    // Listen for build status updates
+    socket.on("buildStatus", (status) => {
+      console.log("Build Status Update: ", status)
+      setBuildStatus(status.message)
     })
 
     // Listen for pod status updates
-    socket.on("podStatusUpdate", (status) => {
+    socket.on("podsStatus", (status) => {
       console.log("Pod Status Update: ", status)
-      addWorker(status)
+      addWorkers(status) // Ensure addWorkers sets the entire array
     })
 
     // Clean up the event listeners on component unmount
     return () => {
-      socket.off("progressUpdate")
-      socket.off("podStatusUpdate")
+      socket.off("buildStatus")
+      socket.off("podsStatus")
     }
   })
 
+  useSignalEffect(() => {
+    if (
+      workers.some(
+        (worker) =>
+          worker.type.includes("worker") && worker.status === "Running"
+      )
+    ) {
+      setTimeout(() => {
+        nextStep
+      }, 2000)
+    }
+  })
+
+  console.log("Worker: ", workers)
   return (
-    <div className="min-h-screen p-8">
+    <>
       <div className="mx-auto mb-6 grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[1fr_300px]">
         {/* Header Section */}
         <div className="space-y-2">
@@ -84,6 +106,7 @@ export default function TestPrepContainer() {
           <p className="text-sm text-red-400">
             Please stay on this page to ensure the process is not interrupted.
           </p>
+          <p className="text-muted-foreground"></p>
           <p className="text-muted-foreground">
             Testorch is provisioning the workers required to run your test. This
             should take between 20 and 40 seconds. Should it fail the test will
@@ -99,12 +122,13 @@ export default function TestPrepContainer() {
             <CardTitle className="text-lg font-medium">
               Preparing Workers...
             </CardTitle>
-            {progress.length > 0 && (
+            {buildStatus.length > 0 && (
               <p
                 className="text-sm text-muted-foreground"
                 suppressHydrationWarning
               >
-                Updated @ {formatFriendlyDate(lastUpdated)} - Progress: {progress}
+                Updated @ {formatFriendlyDate(lastUpdated)} - Status:{" "}
+                {buildStatus}
               </p>
             )}
           </CardHeader>
@@ -120,45 +144,51 @@ export default function TestPrepContainer() {
             </p>
 
             {/* Workers Table */}
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>POD ID</TableHead>
-                  <TableHead>ROLE</TableHead>
-                  <TableHead>STATUS</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {workers.map((worker) => {
-                  const icon =
-                    worker.type === "controller" ? (
-                      <CloudIcon />
-                    ) : (
-                      <Settings2Icon />
+            {workers.length > 0 && (
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>POD ID</TableHead>
+                    <TableHead>ROLE</TableHead>
+                    <TableHead>STATUS</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {workers.map((worker) => {
+                    let icon
+                    if (worker.type === "controller") {
+                      icon = <CloudIcon />
+                    } else if (worker.type === "agent") {
+                      icon = <Bot />
+                    } else {
+                      icon = <Settings2Icon />
+                    }
+                    return (
+                      <TableRow key={worker.id}>
+                        <TableCell className="font-mono">{worker.id}</TableCell>
+                        <TableCell>
+                          <div className="flex items-center gap-2">
+                            {icon}
+                            Testorch {worker.type}
+                          </div>
+                        </TableCell>
+                        <TableCell>
+                          <div className="flex items-center gap-2">
+                            <div className="h-2 w-2 animate-pulse rounded-full bg-primary" />
+                            {worker.status}
+                          </div>
+                        </TableCell>
+                      </TableRow>
                     )
-                  return (
-                    <TableRow key={worker.id}>
-                      <TableCell className="font-mono">{worker.id}</TableCell>
-                      <TableCell>
-                        <div className="flex items-center gap-2">
-                          {icon}
-                          Testorch {worker.type}
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <div className="flex items-center gap-2">
-                          <div className="h-2 w-2 animate-pulse rounded-full bg-primary" />
-                          {worker.status}
-                        </div>
-                      </TableCell>
-                    </TableRow>
-                  )
-                })}
-              </TableBody>
-            </Table>
+                  })}
+                </TableBody>
+              </Table>
+            )}
           </CardContent>
         </Card>
       </div>
-    </div>
+    </>
   )
 }
+
+export default TestPrepContainer

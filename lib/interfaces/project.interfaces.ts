@@ -1,7 +1,7 @@
 import { IApiResponse } from "./api-response.interfaces"
 import { ITestPlan } from "./test-plan.interfaces"
 
-export interface FormStepProps {
+export interface StepProps {
   nextStep?: () => void
   prevStep?: () => void
 }

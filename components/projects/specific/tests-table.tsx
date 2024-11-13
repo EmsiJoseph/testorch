@@ -1,6 +1,7 @@
 "use client"
 
 import { useRouter } from "nextjs-toploader/app"
+import { useState } from "react"
 
 import { ITestPlan } from "@/lib/interfaces/test-plan.interfaces"
 import { useProjectsStore } from "@/lib/stores/use-projects"
@@ -25,14 +26,40 @@ export default function TestsTable({
   const { selectTestPlan } = useTestPlansStore()
   const { selectedProject } = useProjectsStore()
   const router = useRouter()
+  
+  const [sortConfig, setSortConfig] = useState<{ key: string, direction: 'asc' | 'desc' }>({ key: 'created_at', direction: 'asc' })
+
+  const sortedTests = tests ? tests.slice().sort((a, b) => {
+    const key = sortConfig.key as keyof ITestPlan
+    if (a[key] == null || b[key] == null) {
+      return 0;
+    }
+    if (a[key] < b[key]) {
+      return sortConfig.direction === 'asc' ? -1 : 1;
+    }
+    if (a[key] > b[key]) {
+      return sortConfig.direction === 'asc' ? 1 : -1;
+    }
+    return 0
+  }) : []
+
+  const requestSort = (key: string) => {
+    let direction: 'asc' | 'desc' = 'asc'
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc'
+    }
+    setSortConfig({ key, direction })
+  }
+
   return (
     <div className="rounded-lg border">
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Type</TableHead>
-            <TableHead>Author</TableHead>
+            <TableHead onClick={() => requestSort('name')}>Name</TableHead>
+            <TableHead onClick={() => requestSort('type')}>Type</TableHead>
+            <TableHead onClick={() => requestSort('createdByName')}>Author</TableHead>
+            <TableHead onClick={() => requestSort('created_at')}>Added on</TableHead>
             {/* <TableHead>Host</TableHead>
             <TableHead>Region</TableHead>
             <TableHead>Users</TableHead> */}
@@ -40,12 +67,13 @@ export default function TestsTable({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {tests && tests.length > 0 ? (
-            tests.map((test) => (
+          {sortedTests && sortedTests.length > 0 ? (
+            sortedTests.map((test) => (
               <TableRow key={test.name}>
                 <TableCell className="font-medium">{test.name}</TableCell>
                 <TableCell>{test.type}</TableCell>
                 <TableCell>{test.createdByName}</TableCell>
+                <TableCell>{test.created_at}</TableCell>
                 {/* <TableCell>{test.host}</TableCell>
                 <TableCell>{test.region}</TableCell>
                 <TableCell>{test.users}</TableCell> */}
@@ -54,7 +82,7 @@ export default function TestsTable({
                     onLaunch={() => {
                       selectTestPlan(test)
                       router.push(
-                        `/projects/${selectedProject?.name}/execute/${test.name}`
+                        `/projects/${selectedProject?.name}/${test.name}`
                       )
                     }}
                     onEdit={() => console.log("Edit", test.name)}

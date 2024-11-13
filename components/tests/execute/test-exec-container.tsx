@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select"
 import useSocketsStore from "@/lib/stores/use-sockets"
 import { useTestPlansStore } from "@/lib/stores/use-tests"
+import { StepProps } from "@/lib/interfaces/project.interfaces"
 
 // Header Component
 function Header() {
@@ -104,18 +105,18 @@ function TestDetails() {
 }
 
 // Main Component
-export default function TestExecutionContainer() {
+const TestExecutionContainer: React.FC<StepProps> = ({ nextStep }) => {
   const router = useRouter()
   const {clearAll } =
   useSocketsStore()
 
   const handleLaunch = async () => {
     clearAll()
-    router.push(`/prepare-test`)
+    nextStep
   }
 
   return (
-    <div className="min-h-screen p-8">
+    <>
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[1fr_300px]">
         <div className="space-y-8">
           <Header />
@@ -132,7 +133,7 @@ export default function TestExecutionContainer() {
                 >
                   Cancel
                 </Button>
-                <Button className="gap-2" onClick={handleLaunch}>
+                <Button className="gap-2" onClick={nextStep}>
                   <Play className="h-4 w-4" />
                   Launch Test Now
                 </Button>
@@ -149,6 +150,8 @@ export default function TestExecutionContainer() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </>
   )
 }
+
+export default TestExecutionContainer

@@ -1,8 +1,8 @@
 import { CreateInvitationForm } from "@/app/(protected)/(settings)/team/members/create-invitation-form"
 import { Button } from "@/components/ui/button"
-import { FormStepProps } from "@/lib/interfaces/project.interfaces"
+import { StepProps } from "@/lib/interfaces/project.interfaces"
 
-export const InviteTeamMembersStep: React.FC<FormStepProps> = ({
+export const InviteTeamMembersStep: React.FC<StepProps> = ({
   nextStep,
 }) => {
   return (

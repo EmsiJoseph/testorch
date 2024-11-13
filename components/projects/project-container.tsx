@@ -52,8 +52,6 @@ export default function ProjectsContainer({
     router.push("/projects/new")
   }
 
-  console.log(projects)
-  console.log(projects?.length)
   return (
     <div className="flex flex-col">
       <div className="flex flex-1 overflow-hidden ">

@@ -25,7 +25,7 @@ export const createProject = actionClient
     async ({
       parsedInput,
     }: {
-      parsedInput: { name: string; auth0_org_id: string; email: string }
+      parsedInput: { name: string; auth0_org_id: string; email: string; description: string }
     }) => {
       const request = async (): Promise<
         AxiosResponse<ICreateProjectResponse>
@@ -37,6 +37,7 @@ export const createProject = actionClient
           {
             name: parsedInput.name,
             auth0_org_id: parsedInput.auth0_org_id,
+            description: parsedInput.description,
             email: parsedInput.email,
           }
         )

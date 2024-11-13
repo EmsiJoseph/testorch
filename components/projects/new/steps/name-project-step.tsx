@@ -3,7 +3,7 @@
 import React from "react"
 import { useFormContext } from "react-hook-form"
 
-import { FormStepProps } from "@/lib/interfaces/project.interfaces"
+import { StepProps } from "@/lib/interfaces/project.interfaces"
 import { createProjectFormSubmitting } from "@/lib/signals"
 import { Button } from "@/components/ui/button"
 import {
@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
 // Step 1: Name Your Project
-const NameProjectStep: React.FC<FormStepProps> = ({ nextStep }) => {
+const NameProjectStep: React.FC<StepProps> = ({ nextStep }) => {
   const form = useFormContext()
 
   return (

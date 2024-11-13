@@ -1,7 +1,7 @@
 import { useRouter } from "nextjs-toploader/app"
 import { useFormContext } from "react-hook-form"
 
-import { FormStepProps } from "@/lib/interfaces/project.interfaces"
+import { StepProps } from "@/lib/interfaces/project.interfaces"
 import { addTestPlanFormIsSubmitting } from "@/lib/signals"
 import { Button } from "@/components/ui/button"
 import {
@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input"
 import { SubmitButton } from "@/components/common/submit-button"
 import { Textarea } from "@/components/ui/textarea"
 
-const SetupTestStep: React.FC<FormStepProps> = ({ prevStep }) => {
+const SetupTestStep: React.FC<StepProps> = ({ prevStep }) => {
   const form = useFormContext()
   const router = useRouter()
   return (

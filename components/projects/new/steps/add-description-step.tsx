@@ -12,11 +12,11 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 import { Textarea } from "@/components/ui/textarea"
-import { FormStepProps } from "@/lib/interfaces/project.interfaces"
+import { StepProps } from "@/lib/interfaces/project.interfaces"
 import { createProjectFormSubmitting } from "@/lib/signals"
 
 // Step 1: Name Your Project
-const AddDescriptionStep: React.FC<FormStepProps> = ({ prevStep }) => {
+const AddDescriptionStep: React.FC<StepProps> = ({ prevStep }) => {
   const form = useFormContext()
   return (
     <div className="text-center">

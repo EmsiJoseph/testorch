@@ -53,6 +53,7 @@ export default function CreateProjectContainer() {
   const onSubmit = async () => {
     form.setValue("auth0_org_id", user?.org_id || "")
     form.setValue("email", user?.email || "")
+    console.log("Description: ", form.getValues("description"))
     const formValues = form.getValues()
     createProjectFormSubmitting.value = true
     const res = await handleExecuteAsync<TCreateProjectFormValues>(

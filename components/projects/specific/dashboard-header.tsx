@@ -1,20 +1,20 @@
 "use client"
 
-import { Edit3, Plus } from "lucide-react"
-import Link from "next/link"
-import { useRouter } from "nextjs-toploader/app"
 import { useState } from "react"
+import Link from "next/link"
+import { Edit3, Plus } from "lucide-react"
+import { useRouter } from "nextjs-toploader/app"
 
+import { IProject } from "@/lib/interfaces/project.interfaces"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Skeleton } from "@/components/ui/skeleton"
-import { IProject } from "@/lib/interfaces/project.interfaces"
 
 export default function DashboardHeader({
   project,
-  name
+  name,
 }: {
-  project: IProject | undefined,
+  project: IProject | undefined
   name: string | undefined
 }) {
   const [isEditing, setIsEditing] = useState(false)
@@ -41,8 +41,8 @@ export default function DashboardHeader({
   return (
     <>
       <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <div className="flex flex-col items-start space-y-2">
+        <div className="flex items-start justify-between"> {/* Changed items-center to items-start */}
+          <div className="flex flex-col items-start space-y-4">
             {isEditing ? (
               <Input
                 type="text"
@@ -67,13 +67,12 @@ export default function DashboardHeader({
               <Skeleton className="h-8 w-48" />
             )}
             {project?.description ? (
-              <p className="text-muted-foreground">
-                {project.description}{" "}
+              <div className="flex flex-col gap-1">
+                <p className="text-muted-foreground">{project.description}</p>
                 <Link href="#" className="text-primary hover:underline">
                   Learn more
                 </Link>
-                .
-              </p>
+              </div>
             ) : project ? (
               <Button variant="ghost">
                 <Edit3 className="mr-2 h-4 w-4" />

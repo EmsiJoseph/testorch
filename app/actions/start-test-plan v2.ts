@@ -5,9 +5,7 @@ import { AxiosResponse } from "axios"
 import { flattenValidationErrors } from "next-safe-action"
 
 import { TestorchAxiosConfig } from "@/config/backend-axios-config"
-import {
-  postStartTestPlanRouteV2
-} from "@/config/endpoints/test-plan-management-routes"
+import { postStartTestPlanRouteV3 } from "@/config/endpoints/test-plan-management-routes"
 import { handleServerSideApiResponse } from "@/lib/handlers/handle-server-side-api-response"
 import { handleSetAuthToken } from "@/lib/handlers/handle-set-auth-token"
 import { actionClient } from "@/lib/safe-action"
@@ -21,15 +19,39 @@ export const startTestPlanv2 = actionClient
     async ({
       parsedInput,
     }: {
-      parsedInput: { testPlanName: string; workerNodes: number, projectName: string }
+      parsedInput: {
+        testPlanName: string
+        email: string
+        auth0_org_id: string
+        workerNodes: number
+        projectName: string
+        protocol: string
+        host: string
+        basePath: string
+        threadCount: number
+        startUpTime: number
+        holdLoadTime: number
+        shutdownTime: number
+        targetThroughputPerMin: number
+      }
     }) => {
       const request = async (): Promise<AxiosResponse<any>> => {
         await handleSetAuthToken()
 
-        return await TestorchAxiosConfig.post<any>(postStartTestPlanRouteV2, {
+        return await TestorchAxiosConfig.post<any>(postStartTestPlanRouteV3, {
           testPlanName: parsedInput.testPlanName,
+          email: parsedInput.email,
+          auth0_org_id: parsedInput.auth0_org_id,
           workerNodes: parsedInput.workerNodes,
-          projectName: parsedInput.projectName
+          projectName: parsedInput.projectName,
+          protocol: parsedInput.protocol,
+          host: parsedInput.host,
+          basePath: parsedInput.basePath,
+          threadCount: parsedInput.threadCount,
+          startUpTime: parsedInput.startUpTime,
+          holdLoadTime: parsedInput.holdLoadTime,
+          shutdownTime: parsedInput.shutdownTime,
+          targetThroughputPerMin: parsedInput.targetThroughputPerMin,
         })
       }
 

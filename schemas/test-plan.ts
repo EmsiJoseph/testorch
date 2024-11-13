@@ -32,8 +32,18 @@ export const AddTestSchemaV2 = z.object({
 
 export const StartTestPlanSchemaV2 = z.object({
   testPlanName: z.string(),
+  email: z.string(),
+  auth0_org_id: z.string(),
   workerNodes: z.number(),
-  projectName: z.string()
+  projectName: z.string(),
+  protocol: z.string(),
+  host: z.string(),
+  basePath: z.string(),
+  threadCount: z.number(),
+  startUpTime: z.number(),
+  holdLoadTime: z.number(),
+  shutdownTime: z.number(),
+  targetThroughputPerMin: z.number(),
 })
 
 export type TAddTestFormValues = z.infer<typeof AddTestSchema>

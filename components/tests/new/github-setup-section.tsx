@@ -14,11 +14,11 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { FormStepProps } from "@/lib/interfaces/project.interfaces"
+import { StepProps } from "@/lib/interfaces/project.interfaces"
 import { addTestPlanFormIsSubmitting } from "@/lib/signals"
 import { addTest } from "@/app/actions/add-test"
 
-const GithubSetupSection: React.FC<FormStepProps> = ({ prevStep }) => {
+const GithubSetupSection: React.FC<StepProps> = ({ prevStep }) => {
   const form = useFormContext()
 
   return (
